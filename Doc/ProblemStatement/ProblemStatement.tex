@@ -1,49 +1,95 @@
-\documentclass{article}
-
-\usepackage{tabularx}
-\usepackage{booktabs}
-
-\title{SE 3XA3: Problem Statement\\Title of Project}
-
-\author{Team \#, Team Name
-		\\ Student 1 Abdallah Abraham Taha and tahaa8
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\documentclass[11pt, oneside]{article}   	% use "amsart" instead of "article" for AMSLaTeX format
+\usepackage{geometry}                		% See geometry.pdf to learn the layout options. There are lots.
+\geometry{letterpaper}                   		% ... or a4paper or a5paper or ... 
+%\geometry{landscape}                		% Activate for rotated page geometry
+%\usepackage[parfill]{parskip}    		% Activate to begin paragraphs with an empty line rather than an indent
+\usepackage{graphicx}				% Use pdf, png, jpg, or eps§ with pdflatex; use eps in DVI mode
+								% TeX will automatically convert eps --> pdf in pdflatex		
+\usepackage{float}
+\usepackage{amssymb}
+\usepackage{color}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
 }
 
-\date{}
+\usepackage{fancyhdr}
+\usepackage{fancyhdr}
+\fancyhead[L]{January 29, 2021}
+\fancyhead[C]{SE 3XA3 Problem Statement}
+\fancyhead[R]{AAA Solutions}
+\pagestyle{fancy}
 
-\input{../Comments}
+\usepackage{float}
 
+%SetFonts
+
+%SetFonts
+
+
+\title{3XA3 L01 Group 15 Problem Statement
+}
+\author{Abraham Taha\\
+		400170082
+		\and
+		Andrew Carvalino\\
+		1311940
+		\and
+		Ali Tabar\\
+		400183020}
+\date{January 29th, 2021}							% Activate to display a given date or no date
+
+%---------------------------------------------------------------------
 \begin{document}
+\maketitle
+\newpage
+%---------------------------------------------------------------------
+\tableofcontents
+\newpage
+%---------------------------------------------------------------------
+
+\section{Revision History}
 
 \begin{table}[hp]
-\caption{Revision History} \label{TblRevisionHistory}
-\begin{tabularx}{\textwidth}{llX}
-\toprule
-\textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
-\midrule
-Date1 & Name(s) & Description of changes\\
-Date2 & Name(s) & Description of changes\\
-... & ... & ...\\
-\bottomrule
-\end{tabularx}
+\caption{Revision History: Proof of Concept Plan}
+\begin{center}
+\label{tab:}
+\begin{tabular}{|c|c|c|c|}
+\hline
+\textbf{DATE} & \textbf{DEVELOPER} & \textbf{CHANGE} & \textbf{REVISION}\\
+\hline
+January 28, 2021 & Abraham Taha & Initial Draft & 0\\
+\hline
+January 28, 2021 & Andrew Carvalino & Initial Draft & 0\\
+\hline
+January 28, 2021 & Ali Tabar & Initial Draft & 0\\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
 \end{table}
 
+
 \newpage
+%---------------------------------------------------------------------
+%\maketitle
+\section{Problem Statement}
+\subsection{What problem are you trying to solve?}
 
-\maketitle
+\newcommand*\apos{\textsc{\char13}}
+We are working towards recreating this adaption of the old-school block game Tetris. As game developers, our goal is to add features that captivate users and enhance the product overall. The original project was designed in a way that made the game executable only through console, using a command to run a Python file. We are changing this implementation to create the game on a web browser, with a cleaner and more modern user interface. Additionally, the original game is incomplete and can be improved upon with adding of more features, such as difficulty and other gameplay settings which can be configured by the user, and potentially a local two-player mode. One feature the original game has is to adjust the speed of the falling blocks - however, this is only achievable if the source code is edited. We will strive to fix this problem by adding buttons to the UI, increasing the user-friendliness.
 
-Put your problem statement here.
+\subsection{Why is this an important problem?}
 
-\wss{comment}
+The average user wanting to play the original game would not have the knowledge capable of executing the process to start the game, making it virtually unplayable. Most people would be annoyed with the fact that they’d have to locally install a few Python libraries, and then execute the command to run a .py file, all in a console. Our goal is to create a way where a person with zero background in programming can easily launch and play the game. Furthermore, the game as it currently exists is somewhat dull, and could use more gameplay features to lengthen user playtime and enjoyment. Though Tetris is a simple game with its mechanics, more variety can be added to potentially boost the user’s enjoyment, like a local multiplayer mode where two people can play against each other on the same device, or different difficulty settings, such as variations in the speed of the game or certain shapes which are dropped down into the screen.
 
-\ds{comment}
+\subsection{What is the context of the problem you are solving?}
 
-\mj{comment}
+We are looking to reproduce Tetris in a way that increases its accessibility to anyone that has a device capable of a Wi-Fi connection and can run a web browser. We are also focusing on ensuring maintainability, implementing the code in such a way that it can be built upon easily, should future change occur. Our choice to use JavaScript allows us to be available across multiple devices, like PCs and mobile devices. The stakeholders in this reproduction will be the developers and the users.
 
-\cm{comment}
 
-\mh{comment}
-
-\end{document}
+\end{document}  
