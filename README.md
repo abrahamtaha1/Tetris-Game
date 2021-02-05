@@ -1,8 +1,8 @@
 # Project Name
 
-Team Name: ?
+Team Name: AAA Solutions
 
-Team Members: ?, ?, ?
+Team Members: Abdallah Taha, Ali Tabar, Andrew Carvalino
 
 
 This project is a reimplementation of ...
