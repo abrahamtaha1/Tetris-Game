@@ -3,6 +3,8 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{graphicx}
+
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -80,9 +82,11 @@ User characteristics should go under assumptions.
 A web browser application which contains the game Tetris. This software product will be able to recognize block patterns that complete a consecutive row on a grid. This application will also contain a scoring system based on length of game time as well as points received from completing a row on the grid. The software will also recognize when the stacked blocks reach a level above the maximum grid and will in turn end the game. Our program will also have different difficulty options that will change the speed at which the blocks fall onto the grid. 
 
 \subsubsection{Work Partitioning}
-The backend of the project will be responsible for the game mechanics as well as the scoring and difficulty settings. For the game mechanics the backend software will be responsible for creating a grid for the playable area. It will also generate random blocks from a set list of available blocks; these blocks will then drop down onto the grid and the user will have access to rotate the block 360 degrees in 90-degree increments until it lands on a pre-existing block within the grid. The backend of the software will also need to keep track of the score of the game based on when a row in the grid is filled with blocks, it will then remove the blocks in that row from the grid. Finally, the backend will also be responsible for the different difficulties In the game and will change the speed of the blocks falling onto the grid based on the user selected difficulty. The frontend of the project is responsible for displaying the blocks and the grid as well as showing the current score of the game and the chosen difficulty. 
+The backend of the project will be responsible for the game mechanics as well as the scoring and difficulty settings. For the game mechanics the backend software will be responsible for creating a grid for the playable area. It will also generate random blocks from a set list of available blocks; these blocks will then drop down onto the grid and the user will have access to rotate the block 360 degrees in 90-degree increments until it lands on a pre-existing block within the grid. The backend of the software will also need to keep track of the score of the game based on when a row in the grid is filled with blocks, it will then remove the blocks in that row from the grid. Finally, the backend will also be responsible for the different difficulties In the game and will change the speed of the blocks falling onto the grid based on the user selected difficulty. The frontend of the project is responsible for displaying the blocks and the grid as well as showing the current score of the game and the chosen difficulty. It will also have a start button and difficulty button that a user must press and choose in order to start the game. 
 
 \subsubsection{Individual Product Use Cases}
+
+\includegraphics[width=0.95\linewidth]{usecasexa3.pdf}
 
 \subsection{Functional Requirements}
 
