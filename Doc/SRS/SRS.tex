@@ -87,8 +87,7 @@ User characteristics should go under assumptions.
 \subsubsection*{Work Partitioning}
 \begin{table}[H]
 \caption{Work Partitioning Part I}
-\begin{center}
-\begin{tabular}{|c|c|c|c|}
+\hskip-2.5cm\begin{tabular}{|c|c|c|c|}
 \hline
 Event Number & Event Name & Input & Output\\
 \hline
@@ -105,14 +104,12 @@ Event Number & Event Name & Input & Output\\
 6 & Tetris Game Final Revision & Developer code & Web Browser\\
 \hline
 \end{tabular}
-\end{center}
 \label{default}
 \end{table}%
 
 \begin{table}[H]
 \caption{Work Partitioning Part II}
-\begin{center}
-\begin{tabular}{|c|c|}
+\hskip-2.5cm\begin{tabular}{|c|c|}
 
 \hline
 Event Number & Summary of BUC\\
@@ -131,7 +128,6 @@ Event Number & Summary of BUC\\
 \hline
 
 \end{tabular}
-\end{center}
 \label{default}
 \end{table}%
 
@@ -176,25 +172,98 @@ Event Number & Summary of BUC\\
 \section{Non-functional Requirements}
 
 \subsection{Look and Feel Requirements}
+\subsubsection{Appearance Requirements}
+\begin{itemize}
+\item The user interface shall be well formatted and separated based on score and game grid.
+\item The user interface will include the company logo.
+\item The user interface will have different colors for different shaped blocks
+\item The user interface will have a distinguished game grid section and separate current score section
+\end{itemize}
+\subsubsection{Style Requirements}
+\begin{itemize}
+    \item The user interface will have a consistent font throughout
+    \item Blocks will generate and fall seamlessly onto the game grid
+    \item Button should be easily identified and responsive 
+\end{itemize}
 
 \subsection{Usability and Humanity Requirements}
+\subsubsection{Ease of Use Requirements}
+The game shall be playable by any user with basic understanding of navigating a web browser.
+\subsubsection{Personalization and Internationalization Requirements}
+N/A
+\subsubsection{Learning Requirements}
+A user shall be able to fully understand the game withing five minutes of executing the program.
+\subsubsection{Understandability and Politeness Requirements }
+The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete)
+\subsubsection{Accessibility Requirements}
+This game will be playable to any user that can operate a mouse and keyboard and has access to a web browser.
+\subsubsection{Convenience Requirements}
+Game will automatically display the play again button for the user when the game ends.
+
 
 \subsection{Performance Requirements}
+\subsubsection{Speed and Latency Requirements}
+System shall take no longer then 5 seconds to set up the game once the play button has been pressed. System shall also display the game over menu and calculate the final score in under 3 seconds of game ending.
+\subsubsection{Safety-Critical Requirements}
+N/A
+\subsubsection{Precision or Accuracy Requirements}
+Score shall have zero decimal points and will always be a whole number.
+\subsubsection{Reliability and Availability Requirements}
+System shall go down for no longer then 10 hours every 2 years.
+\subsubsection{Robustness or Fault-Tolerance Requirements}
+N/A
+\subsubsection{Capacity Requirements}
+System shall only record previous games score and the current highscore.
+\subsubsection{Scalability or Extensibility Requirements}
+N/A
+\subsubsection{Longevity Requirements}
+Expected lifetime of the system shall be indefinite.
 
 \subsection{Operational and Environmental Requirements}
+\subsubsection{Expected Physical Environment}
+This application shall run on any device with a web browser and a internet connection.
+\subsubsection{Wider Environment Requirements}
+N/A
+\subsubsection{Requirements for Interfacing with Adjacent Systems}
+N/A
+\subsubsection{Productization Requirements}
+N/A
+\subsubsection{Release Requirements}
+Yearly software releases will be deployed to maintain and improve the application based on client demands and needs.
 
 \subsection{Maintainability and Support Requirements}
+\subsubsection{Maintenance Requirements}
+Maintenance should only take one day requiring the application to only be down one day at a time.
+\subsubsection{Supportability Requirements}
+Product should ensure that any device running a web browser should have capability to run the game.
+\subsubsection{Adaptability Requirements}
+N/A
 
 \subsection{Security Requirements}
+\subsubsection{Access Requirements}
+Any user can have access to the UI of the product given they have a internet connection and a web browser. Only developers will have access to the backend code of the system.
+\subsubsection{Integrity Requirements}
+No user shall be able to modify game mechanics or alter scoring for the game.
+\subsubsection{Privacy Requirements}
+Program shall not release any data other then game data to users.
+\subsubsection{Audit Requirements}
+N/A
+\subsubsection{Immunity Requirements}
+N/A
+
 
 \subsection{Cultural Requirements}
+\subsubsection{Cultural Requirements}
+This product will have zero references pertaining to religions, ethnic groups or any cultures. This application will be hosted in North America put will have access to anywhere in the world providing they have a internet connection and a web browser.
 
 \subsection{Legal Requirements}
+\subsubsection{Legal Compliance Requirements}
+The game will be in complice with all laws and regulations.
+\subsubsection{Standards Compliance Requirements}
+This game shall adhere to the MIT Open Licence.
 
 \subsection{Health and Safety Requirements}
-
-This section is not in the original Volere template, but health and safety are
-issues that should be considered for every engineering project.
+This product will ensure that it was compatible with night mode to protect users eyesight. The product will also ensure that all sound effect remain under 70dB to ensure no damage to hearing. 
 
 \section{Project Issues}
 
