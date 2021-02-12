@@ -4,6 +4,9 @@
 \usepackage{tabularx}
 \usepackage{hyperref}
 \usepackage{graphicx}
+\usepackage{float}
+
+
 
 \hypersetup{
     colorlinks,
@@ -78,12 +81,63 @@ User characteristics should go under assumptions.
 \subsection{The Scope of the Work and the Product}
 
 \subsubsection{The Context of the Work}
+\includegraphics[width=0.95\linewidth]{Context.png}
 
-A web browser application which contains the game Tetris. This software product will be able to recognize block patterns that complete a consecutive row on a grid. This application will also contain a scoring system based on length of game time as well as points received from completing a row on the grid. The software will also recognize when the stacked blocks reach a level above the maximum grid and will in turn end the game. Our program will also have different difficulty options that will change the speed at which the blocks fall onto the grid. 
 
-\subsubsection{Work Partitioning}
-The backend of the project will be responsible for the game mechanics as well as the scoring and difficulty settings. For the game mechanics the backend software will be responsible for creating a grid for the playable area. It will also generate random blocks from a set list of available blocks; these blocks will then drop down onto the grid and the user will have access to rotate the block 360 degrees in 90-degree increments until it lands on a pre-existing block within the grid. The backend of the software will also need to keep track of the score of the game based on when a row in the grid is filled with blocks, it will then remove the blocks in that row from the grid. Finally, the backend will also be responsible for the different difficulties In the game and will change the speed of the blocks falling onto the grid based on the user selected difficulty. The frontend of the project is responsible for displaying the blocks and the grid as well as showing the current score of the game and the chosen difficulty. It will also have a start button and difficulty button that a user must press and choose in order to start the game. 
+\subsubsection*{Work Partitioning}
+\begin{table}[H]
+\caption{Work Partitioning Part I}
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+\hline
+Event Number & Event Name & Input & Output\\
+\hline
+1 & Tetris game Creation & Developer code & Web Browser\\
+\hline
+2 & Tetris game Audio & Microphone & Audio output device\\
+\hline
+3 & Tetris Full Row of Blocks & Developer graphics and code & Web Browser\\
+\hline
+4 & Blocks Overflow Outside of Grid & Developer code & Web Browser\\
+\hline
+5 & Tetris Score Calculation & Developer code & Web Browser\\
+\hline
+6 & Tetris Game Final Revision & Developer code & Web Browser\\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
 
+\begin{table}[H]
+\caption{Work Partitioning Part II}
+\begin{center}
+\begin{tabular}{|c|c|}
+
+\hline
+Event Number & Summary of BUC\\
+\hline
+1 & Recreate a terminal based game that works on multiple web browsers\\ 
+\hline
+2 & Record sound effect to be displayed in the game\\
+\hline
+3 & Create different functions to perform the game mechanics in this project\\
+\hline
+4 & Create overflow detection when blocks fall outside of grid then display an end screen\\
+\hline
+5 & Create a detection system for when row is full and calculate current score\\
+\hline
+6 & Finishing edits to the project\\
+\hline
+
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
+    
+    
 \subsubsection{Individual Product Use Cases}
 
 \includegraphics[width=0.95\linewidth]{usecasexa3.png}
