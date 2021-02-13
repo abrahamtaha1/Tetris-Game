@@ -17,12 +17,12 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Software Requirements Specification\\AAA Tetris}
 
 \author{Team \#115, AAA Solutions
 		\\ Abdallah Taha and tahaa8
 		\\ Ali Tabar and sahraeia
-		\\ Student 3 name and macid
+		\\ Andrew Carvalino and carvalia
 }
 
 \date{\today}
@@ -52,7 +52,7 @@ Feb 12, 2021 & 1.2 & Section 1 completed\\
 
 \pagenumbering{arabic}
 
-This document describes the requirements for AAA Solutions Tetris The template for the Software
+This document describes the requirements for AAA Tetris The template for the Software
 Requirements Specification (SRS) is a subset of the Volere
 template~\citep{RobertsonAndRobertson2012}.
 
@@ -135,7 +135,7 @@ Wi-Fi & Wireless Fidelity\\
 \hline
 IDE & Integrated Development Environment\\
 \hline
-GH & GitHub\\
+GL & Gitlab\\
 \hline
 Product & The game being developed, in its finished state\\
 \hline
@@ -250,11 +250,11 @@ Event Number & Summary of BUC\\
     \item
     When the game starts the game state will have zero blocks within the grid and score will be set to zero.    \subitem
     Fit Criterion or Test Case: \\
-    Check the display of the grid and scoreboard when begin game to check is score is at 0 and no blocks are in the grid.    
+    Check the display of the grid and scoreboard when starting the game to check if the score is at 0 and no blocks are in the grid.    
     \item
-    Blocks will start flowing one by one onto the grid and will rotate based upon user input when the user pushed the play game button.    \subitem
+    Blocks will start flowing one by one onto the grid and will rotate based upon user input when the user pushes the play game button.    \subitem
     Fit Criterion or Test Case: \\
-    Click play on the game and check that the blocks begin flow onto grid one by one and input the WASD keys to check for the 90-degree rotation.    
+    Let user press play on the game and check that the blocks begin flowing onto grid one by one and input the WASD keys to check for the 90-degree rotation.    
     \item
     During the game if a block lands outside of the grid of the game then the game will terminate and display final score to the user.    \subitem
     Fit Criterion or Test Case: \\
@@ -278,7 +278,7 @@ Event Number & Summary of BUC\\
 \begin{itemize}
     \item The user interface will have a consistent font throughout
     \item Blocks will generate and fall seamlessly onto the game grid
-    \item Button should be easily identified and responsive 
+    \item Buttons should be easily identified and responsive 
 \end{itemize}
 
 \subsection{Usability and Humanity Requirements}
@@ -287,9 +287,9 @@ The game shall be playable by any user with basic understanding of navigating a 
 \subsubsection{Personalization and Internationalization Requirements}
 N/A
 \subsubsection{Learning Requirements}
-A user shall be able to fully understand the game withing five minutes of executing the program.
+A user shall be able to fully understand the game within five minutes of executing the program.
 \subsubsection{Understandability and Politeness Requirements }
-The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete)
+The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete).
 \subsubsection{Accessibility Requirements}
 This game will be playable to any user that can operate a mouse and keyboard and has access to a web browser.
 \subsubsection{Convenience Requirements}
@@ -302,9 +302,9 @@ System shall take no longer then 5 seconds to set up the game once the play butt
 \subsubsection{Safety-Critical Requirements}
 N/A
 \subsubsection{Precision or Accuracy Requirements}
-Score shall have zero decimal points and will always be a whole number.
+Score shall have zero decimal points and will always be a whole number. Game block will only rotate by 90 degrees and block shall only move one grid box horizontally upon user input.
 \subsubsection{Reliability and Availability Requirements}
-System shall go down for no longer then 10 hours every 2 years.
+System shall go down for no longer then 24 hours every 2 years.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
 N/A
 \subsubsection{Capacity Requirements}
@@ -349,7 +349,7 @@ N/A
 
 \subsection{Cultural Requirements}
 \subsubsection{Cultural Requirements}
-This product will have zero references pertaining to religions, ethnic groups or any cultures. This application will be hosted in North America put will have access to anywhere in the world providing they have a internet connection and a web browser.
+This product will have zero references pertaining to religions, ethnic groups or any cultures. This application will be hosted in North America, but will have access to anyone in the world providing they have a internet connection and a web browser.
 
 \subsection{Legal Requirements}
 \subsubsection{Legal Compliance Requirements}
@@ -358,29 +358,76 @@ The game will be in complice with all laws and regulations.
 This game shall adhere to the MIT Open Licence.
 
 \subsection{Health and Safety Requirements}
-This product will ensure that it was compatible with night mode to protect users eyesight. The product will also ensure that all sound effect remain under 70dB to ensure no damage to hearing. 
+This product will ensure that it was compatible with night mode to protect users` eyesight. The product will also ensure that all sound effect remain under 70dB to ensure no damage to hearing. 
 
 \section{Project Issues}
 
 \subsection{Open Issues}
+\begin{itemize}
+    \item Modifying the user interface, such that it runs more efficiently and cleanly
+    \item In the case of some members, learning and understanding the coding language and resources (React) being used
+    \item Maintaining a consistent coding style among all members
+\end{itemize}
 
 \subsection{Off-the-Shelf Solutions}
+\begin{itemize}
+    \item Tutorial videos and articles will be helpful in coming to understand both how JavaScript works, how React works, and how to improve the user interface
+    \item Gitlab, React, Visual Studio Code are all libraries and IDEs that will help create the game. 
+\end{itemize}
 
 \subsection{New Problems}
+\begin{itemize}
+    \item Translating functions and algorithms into JavaScript, which require a different implementation than the original Python source code
+    \item Implementing additional features (2-player mode, difficulty settings, etc.) so they work with the existing product
+    \item Proper interfacing between the front-end, back-end, and user input
+    \item Optimizing the application for different web browsers
+\end{itemize}
 
 \subsection{Tasks}
+\subsubsection{Project Planning}
+\begin{itemize}
+    \item The Life Cycle will take on the Waterfall model
+    \item Development approach will utilise CI/CD Pipeline
+\end{itemize}
+\subsubsection{Planning of the Development Phases}
+\begin{figure}[H]
+    \caption{Task Diagram}
+    \centering
+    \includegraphics[width=0.95\linewidth]{task.png}
+    \end{figure}
 
 \subsection{Migration to the New Product}
+\begin{itemize}
+    \item Converting the game mechanics from Python to JavaScript
+    \item Making the output in an HTML format, rather than a console output
+    \item Adding new features available with the web app format
+\end{itemize}
 
 \subsection{Risks}
+\begin{itemize}
+    \item Runner Failure - 1 percent Chance in the event that it happens Reboot service within 12 hours
+    \item Communication failure between back-end and front-end, resolve by rebooting the system
+\end{itemize}
 
 \subsection{Costs}
+So long as free online tutorials and resources are used exclusively, the only costs will pertain to time devoted to developing the product, specifically in weekly meetings.
 
 \subsection{User Documentation and Training}
+Documentation of the different functions and files in the product will be provided separately, detailing the purpose of the function, as well as how it operates, what variables it takes in, and what it outputs. 
+The users of the product will require no training, as the game will clarify which keys are used in playing the game, and the UI being clear enough for a first-time user to navigate with ease and without confusion.
 
 \subsection{Waiting Room}
+Advanced features of the game may not be included in its initial release, possibly including:
+\begin{itemize}
+    \item 2-player mode
+    \item Player customization of the game (i.e different color themes)
+\end{itemize}
 
 \subsection{Ideas for Solutions}
+\begin{itemize}
+    \item Using free online resources to gain a better understanding of JavaScript and React
+    \item Constant, clear, and consistent communication between group members on matters of roles, current progress, coding functionality, and coding style, typically through group meetings, GitLab commits, and code commenting/documentation
+\end{itemize}
 
 \bibliographystyle{plainnat}
 
