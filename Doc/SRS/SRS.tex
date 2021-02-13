@@ -17,12 +17,12 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Software Requirements Specification\\AAA Tetris}
 
 \author{Team \#115, AAA Solutions
 		\\ Abdallah Taha and tahaa8
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+		\\ Ali Tabar and sahraeia
+		\\ Andrew Carvalino and carvalia
 }
 
 \date{\today}
@@ -41,8 +41,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+Feb 10, 2021 & 1.0 & Sections 2.1, 2.2, 2.3 added\\
+Feb 12, 2021 & 1.1 & Sections 2 and 3 completed\\
+Feb 12, 2021 & 1.2 & Section 1 completed\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -51,30 +52,120 @@ Date 2 & 1.1 & Notes\\
 
 \pagenumbering{arabic}
 
-This document describes the requirements for ....  The template for the Software
+This document describes the requirements for AAA Tetris The template for the Software
 Requirements Specification (SRS) is a subset of the Volere
-template~\citep{RobertsonAndRobertson2012}.  If you make further modifications
-to the template, you should explicity state what modifications were made.
+template~\citep{RobertsonAndRobertson2012}.
 
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
+The purpose of this project is to create a Tetris game based on an initial version of it found on GitHub, but with major improvements. First of all, the original game is just a single Python file, which can only be launched via executing a console command. Our version of the game will be on a web browser page, which will immediately be launched upon opening the page. Additionally, we will be adding on several features. One such feature will be an adjustable difficulty feature which the user can use to make the game either easier or harder. Another feature added to the game will be levels and / or different game modes - this will give the user some incentive to keep playing the game, and add some variety to the experience. 
+One improvement made on the game will be to improve its visuals - overall, making the game’s UI look more appealing to anyone playing.
 
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
-
+The client of this project would be the company who is releasing the game for us. They will review the game before its release to the public, and ensure they are happy with the product. The game will be released under their name.
 \subsubsection{The Customers}
+
+The customer of the project will be anyone in the general public who is interested in playing the game. It is expected that they all have a computer with access to a web browser and an internet connection, enabling them to run and play the game. Additionally, they should have access to a keyboard and monitor to be able to input controls into the game, and see the game on their screen.
 
 \subsubsection{Other Stakeholders}
 
+The Developers:\\
+The developers of this project are the members of AAA Solutions. Our job is to develop a Tetris game, using the original version found on GitHub as a reference. Throughout the developing process, we will test the game and change or improve the design as we see fit.
+
 \subsection{Mandated Constraints}
+
+This section of the template has been modified from the original to include the subsections of 1.3.1 to 1.3.7.
+
+\subsubsection{Solution Constraints}
+The game should be able to run on all popular desktop browsers (Google Chrome, Microsoft Edge, Mozilla FireFox) which support JavaScript. This project will only cover game support for playing on computers, as the controls will be inputted via keyboard. It is assumed that the general public will use popular web browsers, removing the need for optimizing the game to run on outdated or obscure web browsers.
+
+\subsubsection{Implementation Environment of the Current System}
+\begin{figure}[H]
+\caption{Implementation Environment}
+\centering
+\includegraphics[width=0.95\linewidth]{environment.png}
+\end{figure}
+
+\subsubsection{Partner or Collaborative Applications}
+The game does not have any partner or collaborative applications - however, it does rely on popular web browsers being able to run JavaScript and continuing support for it. This is not a very big concern, as HTML is the standard language for web pages, and JavaScript is what is used to interact with those web pages - so the game should have continued support for a very long time. If published on an online website for anyone to access via the internet, the product will rely on having some sort of domain hosting service.
+
+\subsubsection{Anticipated Workplace Environment}
+There is no specific anticipated workplace environment for this product. Ideally, it can be played anywhere, at any time, as long as the user is using a desktop PC or laptop with an internet connection.
+
+\subsubsection{Schedule Constraints}
+
+We have scheduled the project to be fully finished by the week of April 5th.
+\subsubsection{Budget Constraints}
+We do not currently have any sort of budget constraints for this project. All tools and resources necessary to work on the project are open-source, with no money necessary. Should a situation arise where a resource is required for the completion of the project, the cost will be covered out of pocket from the developers.
+
+\subsubsection{Enterprise Constraints}
+
+The finished product will be available for anyone - free access to play the game will be available to the entirety of the public.
 
 \subsection{Naming Conventions and Terminology}
 
+\subsubsection{Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project}
+\begin{table}[H]
+\caption{\bf Definitions}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ACRONYM/ABBREVIATION & INTENDED MEANING\\
+\hline
+AAAS & AAA Solutions\\
+\hline
+JS & JavaScript\\
+\hline
+HTML &Hypertext Markup Language\\
+\hline
+UI & User Interface\\
+\hline
+GUI & Grahical User Interface\\
+\hline
+Ex & Example\\
+\hline
+OS & Operating System\\
+\hline
+Etc & Et Cetera\\
+\hline
+Wi-Fi & Wireless Fidelity\\
+\hline
+IDE & Integrated Development Environment\\
+\hline
+GL & Gitlab\\
+\hline
+Product & The game being developed, in its finished state\\
+\hline
+Project & The development of the game, in an unfinished state\\
+\hline
+Client & The person(s) the product is made for\\
+\hline
+Customer & The person(s) that will use the finished product\\
+\hline
+The program & The coding that makes up the game\\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
+
+
+
 \subsection{Relevant Facts and Assumptions}
 
-User characteristics should go under assumptions.
+\subsubsection{Relevant Facts}
+
+We have a few business rules for our team.
+The first rule is that we all reserve the right to question each other and ask for further explanations when viewing parts of the project that other team members have worked on. The reason for this is that as a team, we all deserve to know the reasoning behind other team members’ decisions and how our parts will function in conjunction with theirs.
+The second rule is that the entire team will have a group meeting at least two hours before a project deliverable is due. This will ensure for adequate time for the team to check over the deliverable together, sort out any discrepancies, and correct errors.
+
+\subsubsection{Assumptions}
+The developers are assuming that all software being used in the creation of the project will be free, open source software. This will include coding IDEs and software packages such as JavaScript or Python libraries. 
 
 \section{Functional Requirements}
 
@@ -159,11 +250,11 @@ Event Number & Summary of BUC\\
     \item
     When the game starts the game state will have zero blocks within the grid and score will be set to zero.    \subitem
     Fit Criterion or Test Case: \\
-    Check the display of the grid and scoreboard when begin game to check is score is at 0 and no blocks are in the grid.    
+    Check the display of the grid and scoreboard when starting the game to check if the score is at 0 and no blocks are in the grid.    
     \item
-    Blocks will start flowing one by one onto the grid and will rotate based upon user input when the user pushed the play game button.    \subitem
+    Blocks will start flowing one by one onto the grid and will rotate based upon user input when the user pushes the play game button.    \subitem
     Fit Criterion or Test Case: \\
-    Click play on the game and check that the blocks begin flow onto grid one by one and input the WASD keys to check for the 90-degree rotation.    
+    Let user press play on the game and check that the blocks begin flowing onto grid one by one and input the WASD keys to check for the 90-degree rotation.    
     \item
     During the game if a block lands outside of the grid of the game then the game will terminate and display final score to the user.    \subitem
     Fit Criterion or Test Case: \\
@@ -187,7 +278,7 @@ Event Number & Summary of BUC\\
 \begin{itemize}
     \item The user interface will have a consistent font throughout
     \item Blocks will generate and fall seamlessly onto the game grid
-    \item Button should be easily identified and responsive 
+    \item Buttons should be easily identified and responsive 
 \end{itemize}
 
 \subsection{Usability and Humanity Requirements}
@@ -196,9 +287,9 @@ The game shall be playable by any user with basic understanding of navigating a 
 \subsubsection{Personalization and Internationalization Requirements}
 N/A
 \subsubsection{Learning Requirements}
-A user shall be able to fully understand the game withing five minutes of executing the program.
+A user shall be able to fully understand the game within five minutes of executing the program.
 \subsubsection{Understandability and Politeness Requirements }
-The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete)
+The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete).
 \subsubsection{Accessibility Requirements}
 This game will be playable to any user that can operate a mouse and keyboard and has access to a web browser.
 \subsubsection{Convenience Requirements}
@@ -211,9 +302,9 @@ System shall take no longer then 5 seconds to set up the game once the play butt
 \subsubsection{Safety-Critical Requirements}
 N/A
 \subsubsection{Precision or Accuracy Requirements}
-Score shall have zero decimal points and will always be a whole number.
+Score shall have zero decimal points and will always be a whole number. Game block will only rotate by 90 degrees and block shall only move one grid box horizontally upon user input.
 \subsubsection{Reliability and Availability Requirements}
-System shall go down for no longer then 10 hours every 2 years.
+System shall go down for no longer then 24 hours every 2 years.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
 N/A
 \subsubsection{Capacity Requirements}
@@ -258,7 +349,7 @@ N/A
 
 \subsection{Cultural Requirements}
 \subsubsection{Cultural Requirements}
-This product will have zero references pertaining to religions, ethnic groups or any cultures. This application will be hosted in North America put will have access to anywhere in the world providing they have a internet connection and a web browser.
+This product will have zero references pertaining to religions, ethnic groups or any cultures. This application will be hosted in North America, but will have access to anyone in the world providing they have a internet connection and a web browser.
 
 \subsection{Legal Requirements}
 \subsubsection{Legal Compliance Requirements}
@@ -267,7 +358,7 @@ The game will be in complice with all laws and regulations.
 This game shall adhere to the MIT Open Licence.
 
 \subsection{Health and Safety Requirements}
-This product will ensure that it was compatible with night mode to protect users eyesight. The product will also ensure that all sound effect remain under 70dB to ensure no damage to hearing. 
+This product will ensure that it was compatible with night mode to protect users` eyesight. The product will also ensure that all sound effect remain under 70dB to ensure no damage to hearing. 
 
 \section{Project Issues}
 
@@ -280,8 +371,8 @@ This product will ensure that it was compatible with night mode to protect users
 
 \subsection{Off-the-Shelf Solutions}
 \begin{itemize}
-    \item Tutorial videos and articles will be helpful in coming to understand both how JavaScript works, how React work, and how to improve the user interface
-    \item Constant communication and pushing to the git repo will ensure that group members keep track of the progress of others, as well as the quality and styling of their code
+    \item Tutorial videos and articles will be helpful in coming to understand both how JavaScript works, how React works, and how to improve the user interface
+    \item Gitlab, React, Visual Studio Code are all libraries and IDEs that will help create the game. 
 \end{itemize}
 
 \subsection{New Problems}
@@ -296,33 +387,40 @@ This product will ensure that it was compatible with night mode to protect users
 \subsubsection{Project Planning}
 \begin{itemize}
     \item The Life Cycle will take on the Waterfall model
-    \item Development approach will utilse CI/CD Pipeline
+    \item Development approach will utilise CI/CD Pipeline
 \end{itemize}
 \subsubsection{Planning of the Development Phases}
-% Abe can add the .PNG here
+\begin{figure}[H]
+    \caption{Task Diagram}
+    \centering
+    \includegraphics[width=0.95\linewidth]{task.png}
+    \end{figure}
 
 \subsection{Migration to the New Product}
 \begin{itemize}
-    \item Converting between Python and JavaScript typing, data structures, and syntax
+    \item Converting the game mechanics from Python to JavaScript
     \item Making the output in an HTML format, rather than a console output
     \item Adding new features available with the web app format
 \end{itemize}
 
 \subsection{Risks}
-None.
+\begin{itemize}
+    \item Runner Failure - 1 percent Chance in the event that it happens Reboot service within 12 hours
+    \item Communication failure between back-end and front-end, resolve by rebooting the system
+\end{itemize}
 
 \subsection{Costs}
-So long as free online tutorials and resourses are used exclusively, the only costs will pertain to time devoted to developing the product, specifically in weekly meetings.
+So long as free online tutorials and resources are used exclusively, the only costs will pertain to time devoted to developing the product, specifically in weekly meetings.
 
 \subsection{User Documentation and Training}
-Documentation of the different functions and files in the product will be provided seperately, detailing the purpose of the function, as well as how it operates, what variables it takes in, and what it outputs. 
+Documentation of the different functions and files in the product will be provided separately, detailing the purpose of the function, as well as how it operates, what variables it takes in, and what it outputs. 
 The users of the product will require no training, as the game will clarify which keys are used in playing the game, and the UI being clear enough for a first-time user to navigate with ease and without confusion.
 
 \subsection{Waiting Room}
 Advanced features of the game may not be included in its initial release, possibly including:
 \begin{itemize}
     \item 2-player mode
-    \item Player customization of the game
+    \item Player customization of the game (i.e different color themes)
 \end{itemize}
 
 \subsection{Ideas for Solutions}
