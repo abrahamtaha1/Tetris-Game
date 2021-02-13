@@ -21,7 +21,7 @@
 
 \author{Team \#115, AAA Solutions
 		\\ Abdallah Taha and tahaa8
-		\\ Student 2 name and macid
+		\\ Ali Tabar name and sahraeia
 		\\ Student 3 name and macid
 }
 
@@ -41,8 +41,9 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+Feb 10, 2021 & 1.0 & Sections 2.1, 2.2, 2.3 added\\
+Feb 12, 2021 & 1.1 & Sections 2 and 3 completed\\
+Feb 12, 2021 & 1.2 & Section 1 completed\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -59,22 +60,113 @@ to the template, you should explicity state what modifications were made.
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
+The purpose of this project is to create a Tetris game based on an initial version of it found on GitHub, but with major improvements. First of all, the original game is just a single Python file, which can only be launched via executing a console command. Our version of the game will be on a web browser page, which will immediately be launched upon opening the page. Additionally, we will be adding on several features. One such feature will be an adjustable difficulty feature which the user can use to make the game either easier or harder. Another feature added to the game will be levels and / or different game modes - this will give the user some incentive to keep playing the game, and add some variety to the experience. 
+One improvement made on the game will be to improve its visuals - overall, making the game’s UI look more appealing to anyone playing.
 
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
-
+The client of this project would be the company who is releasing the game for us. They will review the game before its release to the public, and ensure they are happy with the product. The game will be released under their name.
 \subsubsection{The Customers}
+
+The customer of the project will be anyone in the general public who is interested in playing the game. It is expected that they all have a computer with access to a web browser and an internet connection, enabling them to run and play the game. Additionally, they should have access to a keyboard and monitor to be able to input controls into the game, and see the game on their screen.
 
 \subsubsection{Other Stakeholders}
 
+The Developers:\\
+The developers of this project are the members of AAA Solutions. Our job is to develop a Tetris game, using the original version found on GitHub as a reference. Throughout the developing process, we will test the game and change or improve the design as we see fit.
+
 \subsection{Mandated Constraints}
+
+This section of the template has been modified from the original to include the subsections of 1.3.1 to 1.3.7.
+
+\subsubsection{Solution Constraints}
+The game should be able to run on all popular desktop browsers (Google Chrome, Microsoft Edge, Mozilla FireFox) which support JavaScript. This project will only cover game support for playing on computers, as the controls will be inputted via keyboard. It is assumed that the general public will use popular web browsers, removing the need for optimizing the game to run on outdated or obscure web browsers.
+
+\subsubsection{Implementation Environment of the Current System}
+\begin{figure}[H]
+\caption{Implementation Environment}
+\centering
+\includegraphics[width=0.95\linewidth]{environment.png}
+\end{figure}
+
+\subsubsection{Partner or Collaborative Applications}
+The game does not have any partner or collaborative applications - however, it does rely on popular web browsers being able to run JavaScript and continuing support for it. This is not a very big concern, as HTML is the standard language for web pages, and JavaScript is what is used to interact with those web pages - so the game should have continued support for a very long time. If published on an online website for anyone to access via the internet, the product will rely on having some sort of domain hosting service.
+
+\subsubsection{Anticipated Workplace Environment}
+There is no specific anticipated workplace environment for this product. Ideally, it can be played anywhere, at any time, as long as the user is using a desktop PC or laptop with an internet connection.
+
+\subsubsection{Schedule Constraints}
+
+We have scheduled the project to be fully finished by the week of April 5th.
+\subsubsection{Budget Constraints}
+We do not currently have any sort of budget constraints for this project. All tools and resources necessary to work on the project are open-source, with no money necessary. Should a situation arise where a resource is required for the completion of the project, the cost will be covered out of pocket from the developers.
+
+\subsubsection{Enterprise Constraints}
+
+The finished product will be available for anyone - free access to play the game will be available to the entirety of the public.
 
 \subsection{Naming Conventions and Terminology}
 
+\subsubsection{Definitions of All Terms, Including Acronyms, Used by Stakeholders Involved in the Project}
+\begin{table}[H]
+\caption{\bf Definitions}
+\begin{center}
+\begin{tabular}{|c|c|}
+\hline
+ACRONYM/ABBREVIATION & INTENDED MEANING\\
+\hline
+AAAS & AAA Solutions\\
+\hline
+JS & JavaScript\\
+\hline
+HTML &Hypertext Markup Language\\
+\hline
+UI & User Interface\\
+\hline
+GUI & Grahical User Interface\\
+\hline
+Ex & Example\\
+\hline
+OS & Operating System\\
+\hline
+Etc & Et Cetera\\
+\hline
+Wi-Fi & Wireless Fidelity\\
+\hline
+IDE & Integrated Development Environment\\
+\hline
+GH & GitHub\\
+\hline
+Product & The game being developed, in its finished state\\
+\hline
+Project & The development of the game, in an unfinished state\\
+\hline
+Client & The person(s) the product is made for\\
+\hline
+Customer & The person(s) that will use the finished product\\
+\hline
+The program & The coding that makes up the game\\
+\hline
+\end{tabular}
+\end{center}
+\label{default}
+\end{table}%
+
+
+
+
+
 \subsection{Relevant Facts and Assumptions}
 
-User characteristics should go under assumptions.
+\subsubsection{Relevant Facts}
+
+We have a few business rules for our team.
+The first rule is that we all reserve the right to question each other and ask for further explanations when viewing parts of the project that other team members have worked on. The reason for this is that as a team, we all deserve to know the reasoning behind other team members’ decisions and how our parts will function in conjunction with theirs.
+The second rule is that the entire team will have a group meeting at least two hours before a project deliverable is due. This will ensure for adequate time for the team to check over the deliverable together, sort out any discrepancies, and correct errors.
+
+\subsubsection{Assumptions}
+The developers are assuming that all software being used in the creation of the project will be free, open source software. This will include coding IDEs and software packages such as JavaScript or Python libraries. 
 
 \section{Functional Requirements}
 
