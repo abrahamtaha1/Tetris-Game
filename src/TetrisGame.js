@@ -188,4 +188,18 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+     //adding start and pause button
+
+     startBtn.addEventListener('click', () => {
+        if(timerID) {
+            clearInterval(timerID)
+            timerID = null
+        }else {
+            draw()
+            timerID = setInterval(moveDown, 100)
+            nextRandom = Math.floor(Math.random() * Blocks.length)
+            displayShape()
+        }
+    })
+
 })
