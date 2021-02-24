@@ -145,5 +145,18 @@ document.addEventListener('DOMContentLoaded', () => {
         
     }
 
+    //rotating the blocks
+
+    function rotate() {
+        eraseBlock()
+        currentRotation ++
+        //switch back to 0 after it gets to 4
+        if(currentRotation === current.length){
+            currentRotation = 0
+        }
+
+        current = Blocks[random][currentRotation]
+        draw()
+    }
 
 })
