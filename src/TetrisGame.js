@@ -223,4 +223,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    //game over function
+
+    function gameover(){
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken')))
+        scoreDisplay.innerHTML = 'end'
+        clearInterval(timerID)
+        }
+
 })
