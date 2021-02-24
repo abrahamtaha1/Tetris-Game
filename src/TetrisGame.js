@@ -159,4 +159,33 @@ document.addEventListener('DOMContentLoaded', () => {
         draw()
     }
 
+    //showing upcoming blocks
+
+    const displaySquares = document.querySelectorAll('.upcoming-grid div')
+    const displayWidth = 4
+    const displayIndex = 0
+
+    //blocks without rotations
+
+    const upNextBlock = [
+        [1, displayWidth+1, displayWidth*2+1, 2], //LBlock
+        [0, displayWidth, displayWidth+1, displayWidth*2+1], //ZBlock
+        [1, displayWidth, displayWidth+1, displayWidth+2], //TBlock
+        [0, 1, displayWidth, displayWidth+1], //OBlocks
+        [1, displayWidth+1, displayWidth*2+1,displayWidth*3+1] //IBlock
+    ]
+
+    //Displaying the upcoming shape in grid
+    
+    function displayShape(){
+        displaySquares.forEach(square => {
+            square.classList.remove('blocks')
+            square.style.backgroundColor = ''
+        })
+        upNextBlock[nextRandom].forEach( index => {
+            displaySquares[displayIndex + index].classList.add('blocks')
+            displaySquares[displayIndex + index].style.backgroundColor = colors[nextRandom]
+        })
+    }
+
 })
