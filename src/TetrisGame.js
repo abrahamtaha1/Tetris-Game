@@ -69,6 +69,30 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+     //undraw a block
 
+     function eraseBlock() {
+        current.forEach(index => {
+            squares[currentPosition + index].classList.remove('blocks')
+            squares[currentPosition + index].style.backgroundColor = ''
+        })
+    } 
+
+    //assigning keys to movements
+
+    function control(e){
+        if(e.keyCode === 65){
+            moveLeft()
+        }else if (e.keyCode === 87){
+            rotate()
+        }else if (e.keyCode === 68){
+            moveRight()
+        }else if (e.keyCode === 83){
+            moveDown()
+        }
+    }
+
+    document.addEventListener('keyup', control)
+   
 
 })
