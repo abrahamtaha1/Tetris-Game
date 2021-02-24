@@ -54,3 +54,21 @@ document.addEventListener('DOMContentLoaded', () => {
     ]
 
     const Blocks = [Lblock, Zblock, Tblock, Oblock, IBlock]
+
+//randomly picking block
+    let currentPosition = 1
+    let currentRotation = 0
+    let random = Math.floor(Math.random()*Blocks.length)
+    let current = Blocks[random][currentRotation]
+
+    //drawing blocks on the grid
+    function draw() {
+        current.forEach(ind => {
+            squares[currentPosition + ind].classList.add('blocks')
+            squares[currentPosition + ind].style.backgroundColor = colors[random]
+        })
+    }
+
+
+
+})
