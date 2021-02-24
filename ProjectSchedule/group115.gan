@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-02-21" view-index="0" gantt-divider-location="250" resource-divider-location="300" version="3.0.3002" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-02-14" view-index="0" gantt-divider-location="347" resource-divider-location="300" version="3.0.3002" locale="en_US">
     <description>
         <![CDATA[Simulation of temperature over time for a solar water heating tank incorporating phase change material (PCM).]]>
     </description>
-    <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="137" order="0"/>
-        <field id="tpd4" name="Begin date" width="43" order="1"/>
-        <field id="tpd5" name="End date" width="66" order="2"/>
+    <view zooming-state="default:7" id="gantt-chart">
+        <field id="tpd3" name="Name" width="226" order="0"/>
+        <field id="tpd4" name="Begin date" width="61" order="1"/>
+        <field id="tpd5" name="End date" width="56" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -44,16 +44,17 @@
             <task id="17" name="Backend Development" color="#8cb6ce" meeting="false" start="2021-02-15" duration="9" complete="0" thirdDate="2015-11-09" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="19" name="Proof of Concept Demo" color="#8cb6ce" meeting="true" start="2021-02-24" duration="0" complete="0" thirdDate="2021-02-05" thirdDate-constraint="0" expand="true"/>
-        <task id="30" name="Implementation #2" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true">
-            <task id="31" name="Fix block falling issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true"/>
-            <task id="37" name="Fix rotating issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-10" thirdDate-constraint="0" expand="true"/>
-            <task id="48" name="Frontend Improvement" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-01-31" thirdDate-constraint="0" expand="true"/>
+        <task id="30" name="Implementation #2" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true">
+            <task id="31" name="Fix block falling issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true"/>
+            <task id="37" name="Fix rotating issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-10" thirdDate-constraint="0" expand="true"/>
+            <task id="48" name="Frontend Improvement" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-01-31" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="21" name="Test Plan V0" color="#8cb6ce" meeting="false" start="2021-02-24" duration="11" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
-        <task id="23" name="Design &amp; Doc V0" color="#8cb6ce" meeting="false" start="2021-03-12" duration="4" complete="0" thirdDate="2021-02-08" thirdDate-constraint="0" expand="true"/>
-        <task id="25" name="Rev 0 Demo" color="#8cb6ce" meeting="false" start="2021-03-18" duration="5" complete="0" thirdDate="2021-03-01" thirdDate-constraint="0" expand="true"/>
-        <task id="27" name="Final Demo" color="#8cb6ce" meeting="false" start="2021-03-01" duration="1" complete="0" thirdDate="2021-03-01" thirdDate-constraint="1" expand="true"/>
-        <task id="29" name="Final Doc" color="#8cb6ce" meeting="false" start="2021-04-08" duration="1" complete="0" thirdDate="2021-03-19" thirdDate-constraint="0" expand="true"/>
+        <task id="21" name="Test Plan Revision 0" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
+        <task id="55" name="Design and Document Revision 0" color="#8cb6ce" meeting="false" start="2021-03-12" duration="6" complete="0" thirdDate="2021-02-21" thirdDate-constraint="0" expand="true"/>
+        <task id="23" name="Revision 0 Demo" color="#8cb6ce" meeting="true" start="2021-03-12" duration="0" complete="0" thirdDate="2021-02-08" thirdDate-constraint="0" expand="true"/>
+        <task id="74" name="Additional Testing" color="#8cb6ce" meeting="false" start="2021-03-29" duration="9" complete="0" thirdDate="2021-04-02" thirdDate-constraint="0" expand="true"/>
+        <task id="59" name="Final Demonstration Revision 1" color="#8cb6ce" meeting="true" start="2021-04-07" duration="0" complete="0" thirdDate="2021-02-07" thirdDate-constraint="0" expand="true"/>
+        <task id="29" name="Final Doc Revision 1" color="#8cb6ce" meeting="false" start="2021-03-18" duration="26" complete="0" thirdDate="2021-03-19" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources>
         <resource id="0" name="Abdallah Taha" function="Default:1" contacts="" phone=""/>
