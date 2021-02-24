@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-01-31" view-index="0" gantt-divider-location="505" resource-divider-location="300" version="3.0.3000" locale="en_CA">
+<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-02-21" view-index="0" gantt-divider-location="250" resource-divider-location="300" version="3.0.3002" locale="en_US">
     <description>
         <![CDATA[Simulation of temperature over time for a solar water heating tank incorporating phase change material (PCM).]]>
     </description>
     <view zooming-state="default:5" id="gantt-chart">
-        <field id="tpd3" name="Name" width="250" order="0"/>
-        <field id="tpd4" name="Begin date" width="126" order="1"/>
-        <field id="tpd5" name="End date" width="125" order="2"/>
+        <field id="tpd3" name="Name" width="137" order="0"/>
+        <field id="tpd4" name="Begin date" width="43" order="1"/>
+        <field id="tpd5" name="End date" width="66" order="2"/>
     </view>
     <view id="resource-table">
         <field id="0" name="Name" width="210" order="0"/>
@@ -35,16 +35,21 @@
             <taskproperty id="tpd8" name="coordinator" type="default" valuetype="text"/>
             <taskproperty id="tpd9" name="predecessorsr" type="default" valuetype="text"/>
         </taskproperties>
-        <task id="1" name="Development Plan" color="#000000" meeting="false" start="2021-02-03" duration="2" complete="0" thirdDate="2021-02-03" thirdDate-constraint="0" expand="true"/>
-        <task id="7" name="Development Plan Due" color="#8cb6ce" meeting="false" start="2021-02-03" duration="1" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
+        <task id="1" name="Development Plan" color="#8cb6ce" meeting="false" start="2021-02-03" duration="2" complete="0" thirdDate="2021-02-03" thirdDate-constraint="0" expand="true"/>
+        <task id="7" name="Development Plan Due" color="#8cb6ce" meeting="true" start="2021-02-05" duration="0" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
         <task id="9" name="Write Design Doc" color="#8cb6ce" meeting="false" start="2021-02-08" duration="6" complete="0" thirdDate="2015-11-03" thirdDate-constraint="0" expand="true" cost-manual-value="20.0" cost-calculated="false"/>
         <task id="11" name="Design Doc Due" color="#8cb6ce" meeting="false" start="2021-02-10" duration="1" complete="0" thirdDate="2015-11-06" thirdDate-constraint="0" priority="2" expand="true"/>
-        <task id="13" name="Implementation" color="#8cb6ce" meeting="false" start="2021-02-15" duration="11" complete="0" expand="true">
-            <task id="15" name="Frontend Development" color="#8cb6ce" meeting="false" start="2021-02-15" duration="11" complete="0" thirdDate="2015-11-09" thirdDate-constraint="0" expand="true"/>
-            <task id="17" name="Backend Development" color="#8cb6ce" meeting="false" start="2021-02-15" duration="11" complete="0" thirdDate="2015-11-09" thirdDate-constraint="0" expand="true"/>
+        <task id="13" name="Implementation" color="#8cb6ce" meeting="false" start="2021-02-15" duration="9" complete="0" expand="true">
+            <task id="15" name="Frontend Development" color="#8cb6ce" meeting="false" start="2021-02-15" duration="9" complete="0" thirdDate="2015-11-09" thirdDate-constraint="0" expand="true"/>
+            <task id="17" name="Backend Development" color="#8cb6ce" meeting="false" start="2021-02-15" duration="9" complete="0" thirdDate="2015-11-09" thirdDate-constraint="0" expand="true"/>
         </task>
-        <task id="19" name="Proof of Concept Demo" color="#8cb6ce" meeting="false" start="2021-02-22" duration="3" complete="0" thirdDate="2021-02-05" thirdDate-constraint="0" expand="true"/>
-        <task id="21" name="Test Plan V0" color="#8cb6ce" meeting="false" start="2021-03-01" duration="2" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
+        <task id="19" name="Proof of Concept Demo" color="#8cb6ce" meeting="true" start="2021-02-24" duration="0" complete="0" thirdDate="2021-02-05" thirdDate-constraint="0" expand="true"/>
+        <task id="30" name="Implementation #2" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true">
+            <task id="31" name="Fix block falling issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-13" thirdDate-constraint="0" expand="true"/>
+            <task id="37" name="Fix rotating issue" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-02-10" thirdDate-constraint="0" expand="true"/>
+            <task id="48" name="Frontend Improvement" color="#8cb6ce" meeting="false" start="2021-02-24" duration="9" complete="0" thirdDate="2021-01-31" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="21" name="Test Plan V0" color="#8cb6ce" meeting="false" start="2021-02-24" duration="11" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
         <task id="23" name="Design &amp; Doc V0" color="#8cb6ce" meeting="false" start="2021-03-12" duration="4" complete="0" thirdDate="2021-02-08" thirdDate-constraint="0" expand="true"/>
         <task id="25" name="Rev 0 Demo" color="#8cb6ce" meeting="false" start="2021-03-18" duration="5" complete="0" thirdDate="2021-03-01" thirdDate-constraint="0" expand="true"/>
         <task id="27" name="Final Demo" color="#8cb6ce" meeting="false" start="2021-03-01" duration="1" complete="0" thirdDate="2021-03-01" thirdDate-constraint="1" expand="true"/>
