@@ -116,4 +116,34 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+     //moving the blocks left while checking if at the left edge of grid
+
+     function moveLeft() {
+        eraseBlock()
+        const LeftEdge = current.some(index => (currentPosition + index) % width === 0)
+
+        if(!LeftEdge) currentPosition -= 1
+
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))){
+            currentPosition += 1
+        }
+        draw()
+        
+    }
+
+    //moving the blocks right while checking if at the right edge of grid
+    function moveRight() {
+        eraseBlock()
+        const RightEdge = current.some(index => (currentPosition + index) % width === 9)
+
+        if(!RightEdge) currentPosition += 1
+
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))){
+            currentPosition -= 1
+        }
+        draw()
+        
+    }
+
+
 })
