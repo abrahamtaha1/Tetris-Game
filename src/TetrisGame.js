@@ -91,8 +91,6 @@ document.addEventListener('DOMContentLoaded', () => {
             moveDown()
         }
     }
-
-    document.addEventListener('keyup', control)
    
     function moveDown(){
         eraseBlock()
@@ -194,7 +192,9 @@ document.addEventListener('DOMContentLoaded', () => {
         if(timerID) {
             clearInterval(timerID)
             timerID = null
+            
         }else {
+            document.addEventListener('keydown', control)
             draw()
             timerID = setInterval(moveDown, 100)
             nextRandom = Math.floor(Math.random() * Blocks.length)
@@ -226,8 +226,11 @@ document.addEventListener('DOMContentLoaded', () => {
     //game over function
 
     function gameover(){
-        if(current.some(index => squares[currentPosition + index].classList.contains('taken')))
-        scoreDisplay.innerHTML = 'end'
-        }
+        if(current.some(index => squares[currentPosition + index].classList.contains('taken'))){
+            scoreDisplay.innerHTML = 'end'
+            clearInterval(timerID)
+            document.removeEventListener('keydown', control)
+            }
+    }
 
 })
