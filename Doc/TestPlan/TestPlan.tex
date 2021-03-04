@@ -12,17 +12,15 @@
 }
 \usepackage[round]{natbib}
 
-\title{SE 3XA3: Test Plan\\Title of Project}
+\title{SE 3XA3: Test Plan\\Tetrileet}
 
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team 15, AAA Solutions
+		\\ Abdallah Taha, tahaa8
+		\\ Ali Tabar, sahraeia
+		\\ Andrew Carvalino, carvalia
 }
 
 \date{\today}
-
-\input{../Comments}
 
 \begin{document}
 
@@ -53,8 +51,11 @@ This document ...
 \section{General Information}
 
 \subsection{Purpose}
-
+The purpose of this document is to describe the testing tools, plan and actual test cases that will be used to verify Tetro Leagues' UI and back end system.
 \subsection{Scope}
+This test plan document will justify our intentions for testing the Tetrileet program. Our main objective is to encounter any existing game glitches or other defects, and later fix the program as necessary once they have been identified.\\
+The test plan document is an approach to documenting all activities related to testing. 
+Aspects of the software to be tested, testing tools used, and summaries of testing methods will all be presented. 
 
 \subsection{Acronyms, Abbreviations, and Symbols}
 	
@@ -65,7 +66,7 @@ This document ...
 \toprule
 \textbf{Abbreviation} & \textbf{Definition} \\
 \midrule
-Abbreviation1 & Definition1\\
+UI & User Interface\\
 Abbreviation2 & Definition2\\
 \bottomrule
 \end{tabularx}
@@ -87,16 +88,22 @@ Term2 & Definition2\\
 \end{table}	
 
 \subsection{Overview of Document}
-
+This document will cover our testing plan which will include the software description, test team, automated testing approach, testing tools, and testing schedule. It will also cover the system test description which will include the tests for functional and nonfunctional requirements. Furthermore, the tests for the proof of concept pertaining to Tetrileet will be provided. Finally, comparison tests of Tetrileet with another existing implementation of Tetris will be discussed, as well as a unit testing plan.   
 \section{Plan}
 	
 \subsection{Software Description}
 
+The software is a simple remake of the classic video game known as \emph{Tetris}. Randomized, preset shapes made up of blocks will fall from the top of a grid, able to be moved left or right in the grid by the player's input. The player can also rotate the blocks by 90, 180, 270, or 360 degrees. The blocks will keep falling until they reach the bottom of the grid, or land on top of another shape. If the player can arrange a full row of blocks by placing the shapes accordingly in the grid, that row of blocks will disappear, causing all blocks above to fall down one row. The player will be rewarded and gain points whenever this happens. If the top of the grid is reached by any blocks (the grid "overflows"), then the game is over.\\
+Our software will feature a main menu in additional to the base game, as well as a difficulty adjusting feature - allowing users to change the speed of which the blocks fall.
+
 \subsection{Test Team}
+The test team for Tetrileet will consist of Abdallah Taha, Ali Tabar, and Andrew Carvalino.
 
 \subsection{Automated Testing Approach}
+The Jest testing library will be used to write automated tests for both the front-end and back-end of our program. For our UI, we will use the JavaScript testing libraries Jest and jsdom. These two libraries provide the functionality to run tests on a mock DOM tree. They also allow us to select and manipulate DOM elements in order to verify some properties of our UI such as if an element has the correct height, width etc.
 
 \subsection{Testing Tools}
+The testing tools that we will use are the JavaScript testing libraries Jest and jsdom.
 
 \subsection{Testing Schedule}
 		
@@ -106,7 +113,7 @@ See Gantt Chart at the following url ...
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Hit Detection}
 		
 \paragraph{Title for Test}
 
@@ -114,7 +121,7 @@ See Gantt Chart at the following url ...
 
 \item{test-id1\\}
 
-Type: Functional, Dynamic, Manual, Static etc.
+Type: Functional, Dynamic, Manual
 					
 Initial State: 
 					
@@ -222,6 +229,9 @@ How test will be performed:
 
 	
 \section{Comparison to Existing Implementation}	
+
+
+				
 				
 \section{Unit Testing Plan}
 		
