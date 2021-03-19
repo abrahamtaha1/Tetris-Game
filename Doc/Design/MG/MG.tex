@@ -29,17 +29,15 @@
 \newcommand{\mthemnum}{M\themnum}
 \newcommand{\mref}[1]{M\ref{#1}}
 
-\title{SE 3XA3: Software Requirements Specification\\Title of Project}
+\title{SE 3XA3: Software Requirements Specification\\Tetrileet}
 
-\author{Team \#, Team Name
-		\\ Student 1 name and macid
-		\\ Student 2 name and macid
-		\\ Student 3 name and macid
+\author{Team 15, AAA Solutions
+		\\ Student 1 Abdallah Taha, tahaa8
+		\\ Student 2 Andrew Carvalino, carvalia
+		\\ Student 3 Ali Tabar, sahraeia
 }
 
 \date{\today}
-
-\input{../../Comments}
 
 \begin{document}
 
@@ -49,14 +47,14 @@
 \tableofcontents
 \listoftables
 \listoffigures
-
-\begin{table}[bp]
+\newpage
+\begin{table}[h!]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+March 16 2021 & 1.0 & Added sections 1, 2, 3, 5\\
+March 17 2021 & 1.1 & Added sections 4, 6, 7\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -67,105 +65,86 @@ Date 2 & 1.1 & Notes\\
 
 \section{Introduction}
 
-Decomposing a system into modules is a commonly accepted approach to developing
-software.  A module is a work assignment for a programmer or programming
-team~\citep{ParnasEtAl1984}.  We advocate a decomposition
-based on the principle of information hiding~\citep{Parnas1972a}.  This
-principle supports design for change, because the ``secrets'' that each module
-hides represent likely future changes.  Design for change is valuable in SC,
-where modifications are frequent, especially during initial development as the
-solution space is explored.  
 
-Our design follows the rules layed out by \citet{ParnasEtAl1984}, as follows:
-\begin{itemize}
-\item System details that are likely to change independently should be the
-  secrets of separate modules.
-\item Each data structure is used in only one module.
-\item Any other program that requires information stored in a module's data
-  structures must obtain it by calling access programs belonging to that module.
-\end{itemize}
 
-After completing the first stage of the design, the Software Requirements
-Specification (SRS), the Module Guide (MG) is developed~\citep{ParnasEtAl1984}. The MG
-specifies the modular structure of the system and is intended to allow both
-designers and maintainers to easily identify the parts of the software.  The
-potential readers of this document are as follows:
+
+
+Tetrileet is a redevelopment of LoveDaisy's Tetris found on GitHub, which is itself an adaptation to the classic video game known as \textit{Tetris}. The original project was made in Python, but our remake is in JavaScript. Our main goal with this project is to improve upon the preexisting implementation, by adding or adjusting program aspects - all of these changes have been touched upon and explained in the Software Requirements Specification (SRS). The intentions behind these changes are to create a more accessible, user-friendly, and customized experience, enticing longer play times from users.
+\\One of the most commonplace and widely accepted methods to software development is modular design. This entails the division of a software system into multiple different components called modules. We selected this method to ensure better manageability and maintainability for our project, while following the principle of information hiding. This will support maintainability in the future, especially if any changes are to be made to the software.\\
+From this MG, we created the Module Interface Specification (MIS) to showcase the details regarding the implementation of every module.
+\\The Module Guide's (MG) main purpose is to describe the design of the software from a modular perspective to readers. Readers can include:
 
 \begin{itemize}
-\item New project members: This document can be a guide for a new project member
-  to easily understand the overall structure and quickly find the
-  relevant modules they are searching for.
-\item Maintainers: The hierarchical structure of the module guide improves the
-  maintainers' understanding when they need to make changes to the system. It is
-  important for a maintainer to update the relevant sections of the document
-  after changes have been made.
-\item Designers: Once the module guide has been written, it can be used to
-  check for consistency, feasibility and flexibility. Designers can verify the
-  system in various ways, such as consistency among modules, feasibility of the
-  decomposition, and flexibility of the design.
+\item New members of AAA solutions who are joining the Tetrileet development team:
+\\The module guide is a valuable resource for a member of the development team to 
+  conceptually grasp the design of the overall project, and also to find information for specific modules of interest.
+\item Current maintainers of the project: Before making changes to the system, a maintainer should have a concise understanding of the software system's hierarchy. The module guide can help ensure this. Additionally, if changes are made to the system, other maintainers can become aware of this through the MG, as the maintainer who made the changes should update the module guide to reflect them.
+\item Current designers of the project: Designers can use the MG to ensure consistency, feasibility and flexibility in the system - modules must be consistent with one another to work, the deconstruction of the entire system should be convenient and intuitive, and the design as a whole should be flexible - allowing designers to tweak various aspects without difficulty.  
 \end{itemize}
 
-The rest of the document is organized as follows. Section
-\ref{SecChange} lists the anticipated and unlikely changes of the software
-requirements. Section \ref{SecMH} summarizes the module decomposition that
-was constructed according to the likely changes. Section \ref{SecConnection}
-specifies the connections between the software requirements and the
-modules. Section \ref{SecMD} gives a detailed description of the
-modules. Section \ref{SecTM} includes two traceability matrices. One checks
-the completeness of the design against the requirements provided in the SRS. The
-other shows the relation between anticipated changes and the modules. Section
-\ref{SecUse} describes the use relation between modules.
+The rest of the document is organized as follows:
+
+
+\begin{itemize}
+\item Section 2: a list of changes in the software requirements, both anticipated and unlikely
+\item Section 3: an overview of the module decomposition created from the likely changes
+\item Section 4: the connections between the software requirements and modules of the design
+\item Section 5: detailed descriptions of modules
+\item Section 6: traceability matrices which check completeness of the design against SRS requirements and show the relation between anticipated changes and modules
+\item Section 7: a diagram showcasing the use relations between modules
+\end{itemize}
+
+
+
 
 \section{Anticipated and Unlikely Changes} \label{SecChange}
 
-This section lists possible changes to the system. According to the likeliness
-of the change, the possible changes are classified into two
-categories. Anticipated changes are listed in Section \ref{SecAchange}, and
-unlikely changes are listed in Section \ref{SecUchange}.
+This section lists possible changes to the system that may or may not be implemented at a later time. Changes which are anticipated to be implemented are listed in Section \ref{SecAchange}, and
+unlikely changes to the project are listed in Section \ref{SecUchange}.
 
 \subsection{Anticipated Changes} \label{SecAchange}
 
-Anticipated changes are the source of the information that is to be hidden
-inside the modules. Ideally, changing one of the anticipated changes will only
-require changing the one module that hides the associated decision. The approach
-adapted here is called design for
-change.
-
 \begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
+\item[\refstepcounter{acnum} \actheacnum \label{acBrowser}:] 
+The web browser the player uses to run the application and how the scripting and styling modules account for those differences.
+\item[\refstepcounter{acnum} \actheacnum \label{acWindow}:] 
+The size of the browser window the player uses and how the game fits inside it.
+\item[\refstepcounter{acnum} \actheacnum \label{acModules}:] 
+The internal implementation of existing modules.
+\item[\refstepcounter{acnum} \actheacnum \label{acUI}:] 
+The User Interface of the game and how objects are displayed.
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
 
-The module design should be as general as possible. However, a general system is
-more complex. Sometimes this complexity is not necessary. Fixing some design
-decisions at the system architecture stage can simplify the software design. If
-these decision should later need to be changed, then many parts of the design
-will potentially need to be modified. Hence, it is not intended that these
-decisions will be changed.
-
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
-  (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] There will always be
-  a source of input data external to the software.
-\item ...
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucInput}:] 
+Alternate input devices, such as a video game console controller or a touch pad.
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucAudio}:] 
+Adding sound effects to the game, such as menu music or block placement sounds.
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucDevice}:] 
+The user running the game on an alternate device, such as a phone or through a web browser on a video game console.
+\item[\refstepcounter{ucnum} \uctheucnum \label{ucPlayers}:] 
+Implementing a multiplayer feature in the game.
 \end{description}
 
+\newpage
 \section{Module Hierarchy} \label{SecMH}
 
-This section provides an overview of the module design. Modules are summarized
-in a hierarchy decomposed by secrets in Table \ref{TblMH}. The modules listed
-below, which are leaves in the hierarchy tree, are the modules that will
-actually be implemented.
+This section lists all existing modules and showcases the module design. Modules are displayed in their hierarchy in Table \ref{TblMH}.
 
 \begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Game Window
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Start Game
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Pause Game
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] End Game
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Grid
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Game Controller
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Shape
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] BlockStack
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] RowCheck
+\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] BlockFall
+
 \end{description}
 
 
@@ -176,22 +155,21 @@ actually be implemented.
 \textbf{Level 1} & \textbf{Level 2}\\
 \midrule
 
-{Hardware-Hiding Module} & ~ \\
+{Hardware-Hiding Module} & Game Controller\\
 \midrule
 
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
+\multirow{1}{0.3\textwidth}{Behaviour-Hiding Module} 
+& Game Window\\
 \midrule
 
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
+\multirow{8}{0.3\textwidth}{Software Decision Module} & {Grid}\\
+& Shape\\
+& Start Game\\
+& End Game\\
+& BlockStack\\
+& Pause Game\\
+& RowCheck\\
+& BlockFall\\
 \bottomrule
 
 \end{tabular}
@@ -201,33 +179,17 @@ actually be implemented.
 
 \section{Connection Between Requirements and Design} \label{SecConnection}
 
-The design of the system is intended to satisfy the requirements developed in
-the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
+The design of Tetrileet is intended to satisfy the system requirements outlined in the SRS document. In line with the goal of developing a modular program, this section decomposes the functionalities of the game into smaller contained pieces and how they related to the requirements. These connections to the program requirements are listed in Table \ref{TblRT}.
 
 \section{Module Decomposition} \label{SecMD}
 
-Modules are decomposed according to the principle of ``information hiding''
-proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
-decomposition is a brief statement of the design decision hidden by the
-module. The \emph{Services} field specifies \emph{what} the module will do
-without documenting \emph{how} to do it. For each module, a suggestion for the
-implementing software is given under the \emph{Implemented By} title. If the
-entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  Also indicate if the
-module will be implemented specifically for the software.
+The purpose of designing the system with modules is that it allows us to decompose the software into smaller, more manageable pieces of code. By doing this, our program will have increased maintainability, and will allow us to develop it more easily. According to the principle of information hiding, each of our modules will have one secret, which is hidden from the remaining modules. Having these secrets for the modules will allow us to change those sections without disrupting the rest of the system. Furthermore, each of the modules will also have a service which will describe their functionality without revealing their implementation.    
 
-Only the leaf modules in the
-hierarchy have to be implemented. If a dash (\emph{--}) is shown, this means
-that the module is not a leaf and will not have to be implemented. Whether or
-not this module is implemented depends on the programming language
-selected.
-
-\subsection{Hardware Hiding Modules (\mref{mHH})}
+\subsection{Hardware Hiding Modules}
 
 \begin{description}
-\item[Secrets:]The data structure and algorithm used to implement the virtual
-  hardware.
+\item[M6 Game Controller]
+\item[Secrets:]The data structure and algorithm used to implement input/output of the virtual hardware - for example, a keyboard or screen.
 \item[Services:]Serves as a virtual hardware used by the rest of the
   system. This module provides the interface between the hardware and the
   software. So, the system can use it to display outputs or to accept inputs.
@@ -235,48 +197,84 @@ selected.
 \end{description}
 
 \subsection{Behaviour-Hiding Module}
-
 \begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
+\item[M1 Game Window]
+\item[Secrets:]The interface of the game that the player sees and interacts with.
+\item[Services:]Displays the game board, score display, and buttons necessary for the player to interact with the game.
+\item[Implemented By:] Tetrileet
 \end{description}
-
-\subsubsection{Input Format Module (\mref{mInput})}
-
-\begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\end{description}
-
-\subsubsection{Etc.}
-
 
 \subsection{Software Decision Module}
 
+\subsubsection{M5: Grid}
 \begin{description}
-\item[Secrets:] The design decision based on mathematical theorems, physical
-  facts, or programming considerations. The secrets of this module are
-  \emph{not} described in the SRS.
-\item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
-\item[Implemented By:] --
+\item[Secrets:] Algorithm for designing and dealing with Shape movement and placement on the grid.
+\item[Services:] Provides a game board that is associated with programming functionality to shape mechanics within the game.
+\item[Implemented By:] Tetrileet
 \end{description}
 
-\subsubsection{Etc.}
+\subsubsection{M7: Shape}
+
+\begin{description}
+\item[Secrets:] Methods for creating the different shapes of the game and their different orientations.
+\item[Services:]Provides the shapes and rotation functionalities that are necessary for the game.
+\item[Implemented By:] Tetrileet
+\end{description}
+
+\subsubsection{M2: Start Game}
+
+\begin{description}
+\item[Secrets:] Algorithms that tie a user input to Shape movement, as well as track the score of the current game.
+\item[Services:] Resets all game conditions, and then grants the permission for shapes to start falling.
+\item[Implemented By:] Tetrileet
+\end{description}
+
+\subsubsection{M4: End Game}
+
+\begin{description}
+\item[Secrets:] Algorithm for detecting that a shape is outside of the Grid.
+\item[Services:] Notifies certain other modules when the game ends.
+\item[Implemented By:] Tetrileet
+\end{description}
+
+\subsubsection{M8: BlockStack}
+
+\begin{description}
+\item[Secrets:] Algorithm for detecting when a shape has been placed on top of another shape.
+\item[Services:]Provides detection for when a falling shape has landed and disables its movement.
+\item[Implemented By:] Tetrileet
+\end{description}
+
+\subsubsection{M3: Pause Game}
+
+\begin{description}
+\item[Secrets:]Algorithm that ties a user input to pausing game conditions including restricting movement of blocks. 
+\item[Services:] Gives functionality to a pause button by communicating with other modules to restrict game functionality based on input.
+\item[Implemented By:] Tetrileet
+\end{description}
+
+\subsubsection{M9: RowCheck}
+
+\begin{description}
+\item[Secrets:]Algorithm for detecting when a full row on the game grid has been occupied by shapes.
+\item[Services:] Provides the implementation to detect when a player has filled in a row in the game. It will also erase the row and update the score board.
+\item[Implemented By:] Tetrileet 
+\end{description}
+
+\subsubsection{M10: BlockFall}
+
+\begin{description}
+\item[Secrets:]Algorithm for Block movement down the game grid.
+\item[Services:]Provides the implementation to allow for the shapes to fall down the game grid.
+\item[Implemented By:] Tetrileet
+\end{description}
+
 
 \section{Traceability Matrix} \label{SecTM}
 
-This section shows two traceability matrices: between the modules and the
-requirements and between the modules and the anticipated changes.
+Two traceability matrices are shown:
+one displays the trace between the modules and the
+requirements, and the other displays the trace between the modules and the anticipated changes.
 
 % the table should use mref, the requirements should be named, use something
 % like fref
@@ -286,17 +284,12 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+FR1 & M1\\
+FR2 & M1\\
+FR3 & M2, M6\\
+FR4 & M2, M5\\
+FR5 & M2, M5, M6, M7, M8, M9, M10\\
+FR6 & M4, M5, M6, M7, M8, M10\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -309,47 +302,27 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \toprule
 \textbf{AC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+AC1 & M1\\
+AC2 & M1\\
+AC3 & M2, M3, M4, M5, M6, M7, M8, M9, M10\\
+AC4 & M1, M2, M3, M4, M5, M7\\
+
 \bottomrule
 \end{tabular}
 \caption{Trace Between Anticipated Changes and Modules}
 \label{TblACT}
 \end{table}
-
 \section{Use Hierarchy Between Modules} \label{SecUse}
-
-In this section, the uses hierarchy between modules is
-provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
-correct execution of B may be necessary for A to complete the task described in
-its specification. That is, A {\em uses} B if there exist situations in which
-the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
-the modules. It can be seen that the graph is a directed acyclic graph
-(DAG). Each level of the hierarchy offers a testable and usable subset of the
-system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
-
 \begin{figure}[H]
 \centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
+\includegraphics[width=0.7\textwidth]{Heirarchy.png}
 \caption{Use hierarchy among modules}
 \label{FigUH}
 \end{figure}
 
-%\section*{References}
 
-\bibliographystyle {plainnat}
-\bibliography {MG}
+\section{Schedule} \label{SecUse}
+
+The Gantt chart of our project schedule is located in this repo, at\\ 3xa3-L01-group-15/ProjectSchedule/group115.gan.
 
 \end{document}
