@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-03-10" view-index="0" gantt-divider-location="339" resource-divider-location="300" version="3.0.3002" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-03-16" view-index="0" gantt-divider-location="339" resource-divider-location="300" version="3.0.3002" locale="en_US">
     <description>
         <![CDATA[Simulation of temperature over time for a solar water heating tank incorporating phase change material (PCM).]]>
     </description>
@@ -51,7 +51,7 @@
         </task>
         <task id="21" name="Test Plan Revision 0" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
         <task id="77" name="Testing" color="#8cb6ce" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-07" thirdDate-constraint="0" expand="true">
-            <task id="91" name="Testing Functional Requirements" color="#000000" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true">
+            <task id="91" name="Testing Functional Requirements" color="#000000" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="false">
                 <task id="93" name="Testing Hit Detection" color="#8cb6ce" meeting="false" start="2021-03-12" duration="3" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
                 <task id="94" name="Testing Game Executability" color="#8cb6ce" meeting="false" start="2021-03-12" duration="1" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
                 <task id="95" name="Testing Initial Conditions" color="#8cb6ce" meeting="false" start="2021-03-12" duration="2" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
@@ -62,7 +62,19 @@
             <task id="101" name="Testing Nonfunctional Requirements" color="#8cb6ce" meeting="false" start="2021-03-15" duration="2" complete="0" thirdDate="2021-03-15" thirdDate-constraint="0" expand="true"/>
         </task>
         <task id="55" name="Design and Document Revision 0" color="#8cb6ce" meeting="false" start="2021-03-12" duration="6" complete="0" thirdDate="2021-02-21" thirdDate-constraint="0" expand="true"/>
-        <task id="23" name="Revision 0 Demo" color="#8cb6ce" meeting="true" start="2021-03-12" duration="0" complete="0" thirdDate="2021-02-08" thirdDate-constraint="0" expand="true"/>
+        <task id="103" name="Module Implementation" meeting="false" start="2021-03-18" duration="6" complete="0" expand="true">
+            <task id="104" name="M1 - Andrew" color="#8cb6ce" meeting="false" start="2021-03-18" duration="1" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="113" name="M2 - Abraham" color="#8cb6ce" meeting="false" start="2021-03-18" duration="2" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="115" name="M3 - Abraham" color="#8cb6ce" meeting="false" start="2021-03-18" duration="3" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="121" name="M4 - Andrew" color="#8cb6ce" meeting="false" start="2021-03-18" duration="3" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="119" name="M5 - Abraham" color="#8cb6ce" meeting="false" start="2021-03-18" duration="2" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="123" name="M6 - Ali" color="#8cb6ce" meeting="false" start="2021-03-18" duration="3" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="129" name="M7 - Ali" color="#8cb6ce" meeting="false" start="2021-03-18" duration="4" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="117" name="M8 - Team" color="#8cb6ce" meeting="false" start="2021-03-18" duration="5" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="127" name="M9 - Team" color="#8cb6ce" meeting="false" start="2021-03-18" duration="6" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+            <task id="125" name="M10 - Team" color="#8cb6ce" meeting="false" start="2021-03-18" duration="6" complete="0" thirdDate="2021-03-18" thirdDate-constraint="0" expand="true"/>
+        </task>
+        <task id="23" name="Revision 0 Demo" color="#8cb6ce" meeting="true" start="2021-03-24" duration="0" complete="0" thirdDate="2021-02-08" thirdDate-constraint="0" expand="true"/>
         <task id="74" name="Additional Testing" color="#8cb6ce" meeting="false" start="2021-03-29" duration="9" complete="0" thirdDate="2021-04-02" thirdDate-constraint="0" expand="true"/>
         <task id="59" name="Final Demonstration Revision 1" color="#8cb6ce" meeting="true" start="2021-04-07" duration="0" complete="0" thirdDate="2021-02-07" thirdDate-constraint="0" expand="true"/>
         <task id="29" name="Final Doc Revision 1" color="#8cb6ce" meeting="false" start="2021-03-18" duration="26" complete="0" thirdDate="2021-03-19" thirdDate-constraint="0" expand="true"/>
