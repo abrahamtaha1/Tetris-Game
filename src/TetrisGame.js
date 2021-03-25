@@ -3,12 +3,23 @@ document.addEventListener('DOMContentLoaded', () => {
     const grid = document.querySelector('.grid')
     let squares = Array.from(document.querySelectorAll('.grid div'))
     const scoreDisplay = document.querySelector('#score')
-    const startBtn = document.querySelector('#start-Game')
+    const startBtn = document.getElementById("startGame")
+    const startScreen = document.getElementById("startScreen")
+    const difficuties = document.getElementById("difficulties")
+    const diffmeter = document.getElementById("diffmeter")
+
+    const easyBtn = document.getElementById("easy")
+    const medBtn = document.getElementById("med")
+    const hardBtn = document.getElementById("hard")
+
     const width = 10
     let nextRandom = 0
     let score = 0
     let timerID
 
+
+    difficulties.style.visibility = "hidden";
+    diffmeter.style.visibility = "hidden";
 
      //block colors
 
@@ -191,20 +202,52 @@ document.addEventListener('DOMContentLoaded', () => {
         })
     }
 
+
+    function startGame(difficulty){
+
+        difficulties.style.visibility = "hidden"
+        startScreen.style.visibility = "hidden"
+        diffmeter.style.visibility = "hidden"
+        document.addEventListener('keydown', control)
+        draw()
+        timerID = setInterval(moveDown, difficulty)
+        nextRandom = Math.floor(Math.random() * Blocks.length)
+        displayShape()
+
+
+    }
+
+    easyBtn.addEventListener('click', () => {
+        
+        startGame(500)
+
+    })
+
+    medBtn.addEventListener('click', () => {
+        
+        startGame(250)
+
+    })
+
+    hardBtn.addEventListener('click', () => {
+        
+        startGame(100)
+
+    })
+
      //adding start and pause button
 
      startBtn.addEventListener('click', () => {
-        if(timerID) {
+         
+        startBtn.style.visibility = "hidden";
+        difficulties.style.visibility = "visible"
+        diffmeter.style.visibility = "visible"
+
+        /*if(timerID) {
             clearInterval(timerID)
             timerID = null
-            
-        }else {
-            document.addEventListener('keydown', control)
-            draw()
-            timerID = setInterval(moveDown, 500)
-            nextRandom = Math.floor(Math.random() * Blocks.length)
-            displayShape()
-        }
+        */
+
     })
 
     //filling a row of blocks and adding to the score
