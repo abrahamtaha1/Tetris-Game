@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }else {
             document.addEventListener('keydown', control)
             draw()
-            timerID = setInterval(moveDown, 1000)
+            timerID = setInterval(moveDown, 500)
             nextRandom = Math.floor(Math.random() * Blocks.length)
             displayShape()
         }
