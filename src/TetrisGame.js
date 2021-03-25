@@ -146,15 +146,20 @@ document.addEventListener('DOMContentLoaded', () => {
     //rotating the blocks
 
     function rotate() {
-        eraseBlock()
-        currentRotation ++
-        //switch back to 0 after it gets to 4
-        if(currentRotation === current.length){
-            currentRotation = 0
+        const LeftEdge = current.some(index => (currentPosition + index) % width === 0)
+        const RightEdge = current.some(index => (currentPosition + index) % width === 9)
+        if(!RightEdge && !LeftEdge){
+            eraseBlock()
+            currentRotation ++
+            //switch back to 0 after it gets to 4
+            if(currentRotation === current.length){
+                currentRotation = 0
+            }
+    
+            current = Blocks[random][currentRotation]
+            draw()
         }
 
-        current = Blocks[random][currentRotation]
-        draw()
     }
 
     //showing upcoming blocks
@@ -196,7 +201,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }else {
             document.addEventListener('keydown', control)
             draw()
-            timerID = setInterval(moveDown, 100)
+            timerID = setInterval(moveDown, 1000)
             nextRandom = Math.floor(Math.random() * Blocks.length)
             displayShape()
         }

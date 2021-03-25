@@ -1,19 +1,21 @@
 .container {
     display: flex;
-
+    background-image: url("https://assets.codepen.io/2610/internal/screenshots/pens/hGJBg.default.png?fit=cover&format=auto&ha=true&height=540&quality=75&v=2&version=1411352597&width=960");
+    justify-content: center;
+    background-color: rgb(20, 20, 20);
 }
 
 .grid {
-    width: 200px;
-    height: 400px;
+    width: 300px;
+    height: 600px;
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
 }
 
 .grid div {
-    height: 20px;
-    width: 20px;
+    height: 30px;
+    width: 30px;
 } 
 
 
@@ -27,7 +29,7 @@
     height: 80px;
     display: flex;
     flex-wrap: wrap;
-    background-color: aqua;
+    background-color: rgb(255, 255, 255);
 }
 
 .upcoming-grid div{
