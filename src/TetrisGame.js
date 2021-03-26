@@ -404,16 +404,16 @@ document.addEventListener('DOMContentLoaded', () => {
             clearInterval(timerID)
             document.removeEventListener('keydown', control)
             finalScore.style.visibility = 'visible'
-            finalScore.innerHTML = `Score: ${score}`
+            restartScreen.style.visibility = 'visible'
+            finalScore.innerHTML = `Score ${score}`
             restartBtn.style.visibility = 'visible'
             }
     }
-//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     restartBtn.addEventListener('click', () => {
         
         location.reload()
 
     })
-
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 })
