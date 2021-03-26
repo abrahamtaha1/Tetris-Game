@@ -5,8 +5,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const scoreDisplay = document.querySelector('#score')
     const startBtn = document.getElementById("startGame")
     const startScreen = document.getElementById("startScreen")
-    const difficuties = document.getElementById("difficulties")
+    const difficulties = document.getElementById("difficulties")
     const diffmeter = document.getElementById("diffmeter")
+    const logo = document.getElementById("logo")
 
     const easyBtn = document.getElementById("easy")
     const medBtn = document.getElementById("med")
@@ -242,6 +243,7 @@ document.addEventListener('DOMContentLoaded', () => {
         startBtn.style.visibility = "hidden";
         difficulties.style.visibility = "visible"
         diffmeter.style.visibility = "visible"
+        logo.style.visibility = 'hidden'
 
         /*if(timerID) {
             clearInterval(timerID)
