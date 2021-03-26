@@ -403,7 +403,6 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerID)
             document.removeEventListener('keydown', control)
-            restartScreen.style.visibility = 'visible'
             finalScore.style.visibility = 'visible'
             finalScore.innerHTML = `Score: ${score}`
             restartBtn.style.visibility = 'visible'
