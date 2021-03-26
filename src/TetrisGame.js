@@ -12,6 +12,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const medBtn = document.getElementById("med")
     const hardBtn = document.getElementById("hard")
 
+    const restartBtn = document.getElementById("restartGame")
+    const restartScreen = document.getElementById("restartScreen")
+    const finalScore = document.getElementById("finalScore")
+
     const width = 10
     let nextRandom = 0
     let score = 0
@@ -278,7 +282,17 @@ document.addEventListener('DOMContentLoaded', () => {
             scoreDisplay.innerHTML = 'end'
             clearInterval(timerID)
             document.removeEventListener('keydown', control)
+            restartScreen.style.visibility = 'visible'
+            finalScore.style.visibility = 'visible'
+            finalScore.innerHTML = `Score: ${score}`
+            restartBtn.style.visibility = 'visible'
             }
     }
+
+    restartBtn.addEventListener('click', () => {
+        
+        location.reload()
+
+    })
 
 })
