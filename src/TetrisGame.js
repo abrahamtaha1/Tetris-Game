@@ -16,6 +16,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const restartBtn = document.getElementById("restartGame")
     const restartScreen = document.getElementById("restartScreen")
     const finalScore = document.getElementById("finalScore")
+    const controls = document.getElementById("controls")
 
     const width = 10
     let nextRandom = 0
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     difficulties.style.visibility = "hidden";
     diffmeter.style.visibility = "hidden";
+    controls.style.visibility = "hidden";
 
      //block colors
 
@@ -293,6 +295,7 @@ document.addEventListener('DOMContentLoaded', () => {
         difficulties.style.visibility = "hidden"
         startScreen.style.visibility = "hidden"
         diffmeter.style.visibility = "hidden"
+        controls.style.visibility = "hidden"
         document.addEventListener('keydown', control)
         draw()
         timerID = setInterval(moveDown, difficulty)
@@ -341,6 +344,7 @@ document.addEventListener('DOMContentLoaded', () => {
         difficulties.style.visibility = "visible"
         diffmeter.style.visibility = "visible"
         logo.style.visibility = 'hidden'
+        controls.style.visibility = 'visible'
 
 
     })
