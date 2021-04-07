@@ -24,7 +24,8 @@
 }
 
 .upcoming-grid {
-    margin-left: 50px;
+    margin-left: 1200px;
+    margin-top: -500px;
     width: 80px;
     height: 80px;
     display: flex;
