@@ -1,0 +1,76 @@
+\documentclass{article}
+
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+\title{SE 3XA3: Development Plan\\Title of Project}
+
+\author{Team 115, AAA Solutions
+		\\ Abdallah Taha, tahaa8
+		\\ Ali Tabar, sahraeia
+		\\ Andrew Carvalino, carvalia
+}
+
+\date{}
+
+%\input{../Comments}
+
+\begin{document}
+
+\begin{table}[hp]
+\caption{Revision History} \label{TblRevisionHistory}
+\begin{tabularx}{\textwidth}{llX}
+\toprule
+\textbf{Date} & \textbf{Developer(s)} & \textbf{Change} \\
+\midrule
+Febuary 5th 2020 & Abdallah Taha & Added sections 1-3 \\
+Febuary 5th 2020 & Ali Tabar & Added intro blurb, section 4, revised grammar of other sections \\
+Febuary 5th 2020 & Andrew Carvalino & Added section 7 and MacIDs \\
+... & ... & ...\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\maketitle
+
+This document will provide detail on the development plan of AAA Solution's Tetris game. It includes a team meeting plan, plan of communication, list of the different members' roles, the workflow plan for working with Git, proof of concept demonstration plan, list of technologies being used, coding style, and a pointer to the Gantt chart of the project schedule.
+
+\section{Team Meeting Plan}
+AAA Solutions plans to meet through Discord voice chat once a week, on Fridays at 3:30 pm Eastern Standard Time, for at least 30 minutes. However, on weeks in which there is a deliverable due we will also meet Tuesdays at 4:30 pm Eastern Standard Time, for a period of at least 30 minutes. During these weekly meetings, Andrew Carvalino will be the scribe and is in charge of keeping a record of the meeting. The meeting chair will alternate between Abdallah Taha and Ali Tabar. Each week, we will alternate responsibility of writing down a statement of decisons made for the upcoming week. 
+
+\section{Team Communication Plan}
+AAA Solutions will use primarily Discord for our main source of communication. When individually working on a deliverable, it will be common practice to include commit messages through git, to inform other team members on the progress that has been achieved. 
+
+\section{Team Member Roles}
+Abdallah Taha: Team Leader, Full Stack Developer \\
+Ali Tabar: Project Coordinator, Full Stack Developer \\
+Andrew Carvalino: Scribe, Front-End Developer \\
+
+\section{Git Workflow Plan}
+
+Team members will individually work on their sections, though with constant dialogue and feedback between them at all times during the process. Once each team member is done, they will commit and push their changes, letting the other team members know. The other team members will first pull from the repo, before committing and pushing their own changes, too. A git pull should always be done before a member decides to commit their changes to the repo.\\
+Major changes to the code should be kept track of, such as drastic restructures or other large-scale edits. Whether a change should be deemed as a major one will be discussed by all team members. Major changes will be kept track of by making a branch to the repo, with git branch and git checkout.
+
+
+\section{Proof of Concept Demonstration Plan}
+We plan on putting together an initial prototype without functionality. We will develop a simple UI to demonstrate the presentation of our game. In the future, we will develop the game mechanics to work within terminal, to prove that the game is functional.
+
+\section{Technology}
+Front-End: JavaScript, React\\
+Back-End: Python, JavaScript
+
+\section{Coding Style}
+For development in JavaScript, the following styling guide will be used:\\
+https://github.com/airbnb/javascript/tree/master/react \\
+For development in Python, the following styling guide will be used:\\ 
+https://www.python.org/dev/peps/pep-0008/ \\
+
+\section{Project Schedule}
+
+The Gantt chart of our project schedule is located in this repo, at 3xa3-L01-group-15/ProjectSchedule/group115.gan.
+
+\section{Project Review}
+
+\end{document}

@@ -1,0 +1,718 @@
+\documentclass[12pt]{article}
+
+\usepackage{graphicx}
+\usepackage{paralist}
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{hhline}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage[normalem]{ulem}
+\usepackage{xcolor}
+
+\oddsidemargin 0mm
+\evensidemargin 0mm
+\textwidth 160mm
+\textheight 200mm
+\renewcommand\baselinestretch{1.0}
+
+\pagestyle {plain}
+\pagenumbering{arabic}
+
+\newcounter{stepnum}
+
+\usepackage{color}
+
+\newif\ifcomments\commentstrue
+
+\ifcomments
+\newcommand{\authornote}[3]{\textcolor{#1}{[#3 ---#2]}}
+\newcommand{\todo}[1]{\textcolor{red}{[TODO: #1]}}
+\else
+\newcommand{\authornote}[3]{}
+\newcommand{\todo}[1]{}
+\fi
+
+\newcommand{\wss}[1]{\authornote{blue}{SS}{#1}}
+
+\title{SE 3XA3: Module Interface Specification\\Tetrileet}
+
+\author{Team 15, AAA Solutions
+		\\ Student 1 Abdallah Taha, tahaa8
+		\\ Student 2 Andrew Carvalino, carvalia
+		\\ Student 3 Ali Tabar, sahraeia
+}
+
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+This document is the Module Interface Specification (MIS) of AAA Solutions's Tetrileet.
+
+\begin{table}[bp]
+\caption{\bf Revision History}
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+March 17 2021 & 1.0 & Added all modules from Game Controller to End Game \\
+March 18 2021 & 1.1 & Added all modules from BlockFall to Grid\\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\newpage
+
+\section* {Game Controller Module}
+
+\subsection*{Module}
+
+Game Controller Type
+
+\subsection* {Uses}
+Grid
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+N/A
+\subsubsection* {Exported Types}
+N/A
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+moveLeft & keyInput &  & Left\_Edge\_Grid \\
+\hline
+moveRight & keyInput  &  & Right\_Edge\_Grid \\
+\hline
+moveDown & keyInput &  & Taken\_Grid \\
+\hline
+rotate & keyInput &  & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+None 
+\subsubsection* {Environment Variables}
+keyInput: \{”key.W”, ”key.S”, ”key.A”, ”key.D”\}
+
+\subsubsection* {State Invariant}
+None
+\subsubsection* {Assumptions}
+\begin{itemize}
+    \item Game Window is open and the start game button has been called.
+\end{itemize}
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent moveLeft(key.A):
+\begin{itemize}
+\item transition: $grid.moveLeft()$
+\item output: None
+\item exception: Left\_Edge\_Grid
+\end{itemize}
+
+\noindent moveRight(key.D):
+\begin{itemize}
+\item transition: $grid.moveRight()$
+\item output: letter
+\item exception: Right\_Edge\_Grid
+\end{itemize}
+
+\noindent moveDown(key.S):
+\begin{itemize}
+\item transition: $grid.moveDown()$
+\item output: letter
+\item exception: Taken\_Grid
+\end{itemize}
+
+\noindent rotate(key.W):
+\begin{itemize}
+\item transition: $grid.rotate()$
+\item output: letter
+\item exception: None
+\end{itemize}
+
+\subsection*{Local Constants}
+None
+\medskip
+\newpage
+
+\section* {Game Window Module}
+
+\subsection*{Module}
+
+Game Window Type
+
+\subsection* {Uses}
+None
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+N/A
+\subsubsection* {Exported Types}
+Block
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+draw &  &  &  \\
+\hline
+eraseBlock & & & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+Square
+
+
+\subsubsection* {Environment Variables}
+None
+\subsubsection* {State Invariant}
+$|Square| == 200 $
+
+\subsubsection* {Assumptions}
+
+\begin{itemize}
+    \item The HTML file is executed in a compatible browser.
+\end{itemize}
+
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent draw():
+\begin{itemize}
+\item transition: $Square \rightarrow Block$
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent eraseBlock():
+\begin{itemize}
+\item transition: $Block \rightarrow Square$
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {Pause Game Module}
+
+\subsection*{Module}
+
+Pause Game Type
+
+\subsection* {Uses}
+
+Game Window\\
+BlockFall
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+N/A
+\subsubsection* {Exported Types}
+
+$\mathbb{B}$
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Pause & keyInput &  &  \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+Paused \\
+\subsubsection* {Environment Variables}
+
+keyInput: \{”key.P”\}
+
+\subsubsection* {State Invariant}
+
+$Paused = True \lor False $
+
+\subsubsection* {Assumptions}
+
+N/A
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent Pause(key.P):
+\begin{itemize}
+\item transition: $Paused \equiv True \implies Paused := False \lor Paused \equiv False \implies Paused := True$
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {Start Game Module}
+
+\subsection*{Module}
+
+Start Game Type
+
+\subsection* {Uses}
+
+Game Window, BlockFall
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+N/A
+\subsubsection* {Exported Types}
+
+$\mathbb{B}$
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+Start & keyInput &  &  \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+Started
+
+\subsubsection* {Environment Variables}
+keyInput: \{”mouse.leftClick”\}
+
+\subsubsection* {State Invariant}
+
+$ Started = True \lor False $
+
+\subsubsection* {Assumptions}
+
+N/A
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent Start(mouse.leftClick):
+\begin{itemize}
+\item transition: $ Started \equiv False \implies Started := True$
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {End Game Module}
+
+\subsection*{Module}
+
+End Game Type
+
+\subsection* {Uses}
+
+Game Window, Grid
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+
+N/A
+
+\subsubsection* {Exported Types}
+
+$\mathbb{B}$
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+gameOver &  &  & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+Ended
+\subsubsection* {Environment Variables}
+keyInput: \{”mouse.leftClick”\}
+\subsubsection* {State Invariant}
+$ Ended = True \lor False $
+\subsubsection* {Assumptions}
+Game has started and is in a running state.
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent gameOver():
+\begin{itemize}
+\item transition: $Ended \equiv False \rightarrow Ended := True$ 
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {BlockFall Module}
+
+\subsection*{Module}
+BlockFall Type
+\subsection* {Uses}
+
+Game Window, Grid, Shape
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+N/A
+\subsubsection* {Exported Types}
+
+N/A
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+falling &  &  & Taken\_Grid \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+None
+
+\subsubsection* {Environment Variables}
+None
+\subsubsection* {State Invariant}
+
+N/A
+
+\subsubsection* {Assumptions}
+Game has started and is in a running state, and is not paused.
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent falling():
+\begin{itemize}
+\item transition: Game will call $grid.moveDown()$ every 1,000 milliseconds
+\item output: none
+\item exception: Taken\_Grid
+\end{itemize}
+
+\newpage
+
+\section* {BlockStack Module}
+
+\subsection*{Module}
+
+BlockStack Type
+
+\subsection* {Uses}
+
+Shape, BlockFall
+
+\subsection* {Syntax}
+
+\subsubsection* {Exported Constants}
+$\mathbb{B}$
+\subsubsection* {Exported Types}
+N/A
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+freezeBlock &  &  & \\
+\hline
+\end{tabular}
+
+\subsection* {Semantics}
+
+\subsubsection* {State Variables}
+
+N/A
+
+\subsubsection* {Environment Variables}
+
+N/A
+
+\subsubsection* {State Invariant}
+
+N/A
+
+\subsubsection* {Assumptions}
+Game has started and is in a running state, and is not paused.
+\subsubsection* {Access Routine Semantics}
+
+\noindent freezeBlock():
+\begin{itemize}
+\item transition: $Shape.block := $ "Taken"
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+\section* {Shape Module}
+
+\subsection*{Module}
+
+Shape Type
+
+\subsection* {Uses}
+
+Grid
+
+
+\subsubsection*{Exported Constants}
+N/A
+\subsubsection*{Exported Types}
+
+N/A
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+createShape &  &  & \\
+\hline
+\end{tabular}
+
+\paragraph* {Semantics}
+
+\subsubsection*{State Variables}
+
+None
+
+\subsubsection*{Environment Variables}
+
+N/A
+
+\subsubsection*{State Invariant}
+
+N/A
+
+\subsubsection*{Assumptions}
+
+Game has started and is in a running state, and is not paused.
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent createShape():
+\begin{itemize}
+\item transition: Takes coordinates from a predetermined array, and selects the square with the tag 'block', and gives them a colour based on the corresponding shape
+\item output:
+\item exception: None
+\end{itemize}
+
+
+\newpage
+
+\section* {RowCheck Module}
+
+\subsection*{Uses}
+
+Grid
+
+\subsection*{Syntax}
+
+\subsubsection*{Exported Constants}
+N/A
+\subsubsection*{Exported Types}
+
+N/A
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+rowCheck & & $\mathbb{B}$ & \\
+\hline
+rowClear & &  & \\
+\hline
+addScore & & $\mathbb{R}$ & \\
+\hline
+\end{tabular}
+
+\paragraph* {Semantics}
+
+\subsubsection*{State Variables}
+
+clear, rowIndex, addToScore
+
+\subsubsection*{Environment Variables}
+
+None
+
+\subsubsection*{State Invariant}
+
+\begin{itemize}
+    \item $Clear \equiv True \lor False$
+    \item $0 \leq rowIndex \leq 20$
+    \item $addToScore \equiv 10$
+\end{itemize}
+
+\subsubsection*{Assumptions}
+
+N/A
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent rowCheck():
+\begin{itemize}
+\item transition: $\forall~ rowIndex ~\in~ row ~|~ row[rowIndex].block ~\equiv~ 'taken' \implies clear := true$
+\item output: clear
+\item exception: None
+\end{itemize}
+
+\noindent RowClear():
+\begin{itemize}
+\item transition: $ clear := true \implies ~\forall~ rowIndex ~\in~ row ~|~ row[rowIndex].remove('block') ~\land~ \\row[rowIndex].remove('taken')$
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent addScore():
+\begin{itemize}
+\item transition: $ clear == true \implies addToScore += 10$
+\item output: addToScore
+\item exception: None
+\end{itemize}
+
+
+\newpage
+
+\section*{Grid}
+
+\subsection*{Uses}
+
+Game Window
+
+\subsection*{Syntax}
+
+\subsubsection*{Exported Constants}
+
+Square
+
+\subsubsection*{Exported Types}
+
+N/A
+
+\subsubsection* {Exported Access Programs}
+
+\begin{tabular}{| l | l | l | l |}
+\hline
+\textbf{Routine name} & \textbf{In} & \textbf{Out} & \textbf{Exceptions}\\
+\hline
+createGrid() &  & &\\
+\hline
+displayShape() &  &  &\\
+\hline
+moveRight() &  &   &Right\_Edge\_Grid\\
+\hline
+moveLeft() &   &   &Left\_Edge\_Grid\\
+\hline
+moveDown() &  & & Taken\_Grid \\
+\hline
+rotate() & &  &Right\_Edge\_Grid $\land$ Left\_Edge\_Grid $\land$ Taken\_Grid \\
+\hline
+\end{tabular}
+
+\paragraph* {Semantics}
+
+\subsubsection*{State Variables}
+
+[Square], width, height
+
+\subsubsection*{Environment Variables}
+
+N/A
+
+\subsubsection*{State Invariant}
+
+$width = 10 \land height = 20$\\
+$|[Square]| = 200$
+
+\subsubsection*{Assumptions}
+
+N/A
+
+\subsubsection* {Access Routine Semantics}
+
+\noindent createGrid:
+\begin{itemize}
+\item transition: Creates a grid with a height of 20 squares and a width of 10 squares. By taking the squares from the Game Window and assigning them a 'Block' tag.
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent displayShape():
+\begin{itemize}
+\item transition: Takes the predetermined square coordinates from an array that have the tag 'block' and recolors aforementioned squares. It then gives them a 'taken' tag.  
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent moveRight():
+\begin{itemize}
+\item transition: Moves all squares with the tags 'block' and 'taken' from the current shape over by one column to the right. Then, recolours the newly taken squares and gives them a 'taken' tag. Proceeds to remove the colour and 'taken' tag from the squares that are no longer taken.
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent moveLeft():
+\begin{itemize}
+\item transition: Moves all squares with the tags 'block' and 'taken' from the current shape over by one column to the left. Then, recolours the newly taken squares and gives them a 'taken' tag. Proceeds to remove the colour and 'taken' tag from the squares that are no longer taken.
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent moveDown():
+\begin{itemize}
+\item transition: Moves all squares with the tags 'block' and 'taken' from the current shape over by one row down. Then, recolours the newly taken squares and gives them a 'taken' tag. Proceeds to remove the colour and 'taken' tag from the squares that are no longer taken.
+\item output: None
+\item exception: None
+\end{itemize}
+
+\noindent rotate():
+\begin{itemize}
+\item transition: Receives the change coordinates for the current shape from a predetermined array. Then, uses those coordinates to remove 'taken' tags and color from unused blocks after rotation. Finally, the new blocks are coloured and given a 'taken' tag. 
+\item output: None
+\item exception: None
+\end{itemize}
+
+\newpage
+
+
+\end {document}
