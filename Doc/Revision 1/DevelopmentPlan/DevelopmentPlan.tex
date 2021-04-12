@@ -26,7 +26,7 @@
 Febuary 5th 2020 & Abdallah Taha & Added sections 1-3 \\
 Febuary 5th 2020 & Ali Tabar & Added intro blurb, section 4, revised grammar of other sections \\
 Febuary 5th 2020 & Andrew Carvalino & Added section 7 and MacIDs \\
-\textcolor{red}{April 11th 2021} & \textcolor{red}{Ali Tabar} & \textcolor{red}{Revised sections 5 and 6 for last revision.}\\
+\textcolor{red}{April 11th 2021} & \textcolor{red}{Ali Tabar} & \textcolor{red}{Revised sections 5 and 6 for last revision according to TA feedback - improved upon Proof of Concept Demonstration Plan by identifying risks of implementation and how the team will overcome them, and how testing will be done. Improved Technology section by stating more about testing, IDE used for coding, and how documentation will be done. Added Project Review section.}\\
 ... & ... & ...\\
 \bottomrule
 \end{tabularx}
@@ -58,12 +58,12 @@ Major changes to the code should be kept track of, such as drastic restructures 
 \section{Proof of Concept Demonstration Plan}
 We plan on putting together an initial prototype without functionality. We will develop a simple UI to demonstrate the presentation of our game. In the future, we will develop the game mechanics to work within terminal, to prove that the game is functional.\\
 \textcolor{red}{Some risks we are facing in our implementation are to do with learning how to connect the front-end and back-end - this is in regards to "connecting" the HTML file to the JavaScript file, and which components should be in which file. We will try and overcome these risks by discussing and setting up group learning sessions to look over JavaScript-HTML tutorials online and write base test code together. These sessions will be staggered in a way that will not be overwhelming, but time-efficient, ensuring that the majority of concepts can be learned well before any major due date comes up for a prototype.
-\\For testing functional requirements, we will rely on mainly user tests -- this is due to the nature of our program. Since it's a game that only allows user inputs that it can recognize (ex: clicking of a button, pressing keys to control blocks), we can recreate scenarios we want to test in the game, and note the outcomes the program gives. In addition, we can test certain game scenarios by programming an environment with only certain aspects of our game (ex: shapes are allowed to rotate, but don't ever fall) and automate these parts with test cases. We can use Jest for automating these.
+\\For testing functional requirements, we will rely on mainly user tests -- this is due to the nature of our program. Since it's a game that only allows user inputs that it can recognize (ex: clicking of a button, pressing keys to control blocks), we can recreate scenarios we want to test in the game, and note the outcomes the program gives.
 \\For testing nonfunctional requirements, such as testing if the game is more easily navigable and looks better than the original implementation, we will be conducting test groups, with surveys for people to fill out with their opinions afterwards.
 }
 
 \section{Technology}
-\textcolor{red}{For our front-end, we will be using React, which is a JavaScript framework. Our back-end will be programmed using Python. All members of AAA Solutions will be using VSCode as the IDE for writing the code. Documentation will be done manually, using LaTeX for writing up PDF documents that will log different aspects of our program, such as the Module Interface Specification or the Module Guide.}
+\textcolor{red}{For our front-end AND back-end, we will use JavaScript. Since all tests will be done manually, no framework will be used for testing, but the debugging console on a web browser will prove to be useful. All members of AAA Solutions will be using VSCode as the IDE for writing the code. Documentation will be done manually, using LaTeX for writing up PDF documents that will log different aspects of our program, such as the Module Interface Specification or the Module Guide.}
 
 \section{Coding Style}
 For development in JavaScript, the following styling guide will be used:\\
@@ -76,5 +76,13 @@ https://www.python.org/dev/peps/pep-0008/ \\
 The Gantt chart of our project schedule is located in this repo, at 3xa3-L01-group-15/ProjectSchedule/group115.gan.
 
 \section{Project Review}
+
+\textcolor{red}{Overall, our project was sucessful, but there were a few issues and changes we had to employ throughout our time spent developing and documenting Tetrileet.
+\\For instance, we were on a time crunch when developing the first prototype, so we opted to drop the initial React / JavaScript front-end and Python back-end, and decided to do the entire project in JavaScript instead. None of us had used React before, or were familiar with any frameworks to connect a front-end to a back-end. For this reason, we coded the whole program using JavaScript and CSS, as JavaScript has good front-end and back-end support - it was flexible enough that we could do everything in one language. However, learning JavaScript and HTML together as a team was a success, and we effectively learned everything we needed in a few sessions.
+\\Team meetings went as planned, and the majority of groupwork was done while in meetings - which proved well, as there was a lot of different inputs from team members in discussions about the design, coding and documentation.
+\\Communication via Discord was successful, and all team members of AAA Solutions effectively communicated  daily.
+\\ Using GitLab for managing our workflow went well. Major changes to the code were kept track of, and team members could inspect the GitLab website and commit messages to see changes they missed in addition to dialoguing with other members.
+\\Finally, we are satisfied with final demo and presentation. All aspects of the game that we wanted to work before the demo were working correctly, and we touched on everything we thought necessary in the PowerPoint / oral presentation afterwards.
+}
 
 \end{document}
