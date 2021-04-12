@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-03-16" view-index="0" gantt-divider-location="339" resource-divider-location="300" version="3.0.3002" locale="en_US">
+<?xml version="1.0" encoding="UTF-8"?><project name="PCM" company="McMaster, CAS Department" webLink="" view-date="2021-03-10" view-index="0" gantt-divider-location="339" resource-divider-location="300" version="3.0.3002" locale="en_US">
     <description>
         <![CDATA[Simulation of temperature over time for a solar water heating tank incorporating phase change material (PCM).]]>
     </description>
@@ -8,8 +8,8 @@
         <field id="tpd5" name="End date" width="55" order="2"/>
     </view>
     <view id="resource-table">
-        <field id="0" name="Name" width="210" order="0"/>
-        <field id="1" name="Default role" width="86" order="1"/>
+        <field id="0" name="Name" width="150" order="0"/>
+        <field id="1" name="Default role" width="146" order="1"/>
     </view>
     <!-- -->
     <calendars>
@@ -51,13 +51,13 @@
         </task>
         <task id="21" name="Test Plan Revision 0" color="#8cb6ce" meeting="false" start="2021-02-24" duration="16" complete="0" thirdDate="2021-02-01" thirdDate-constraint="0" expand="true"/>
         <task id="77" name="Testing" color="#8cb6ce" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-07" thirdDate-constraint="0" expand="true">
-            <task id="91" name="Testing Functional Requirements" color="#000000" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="false">
+            <task id="91" name="Testing Functional Requirements" color="#000000" meeting="false" start="2021-03-12" duration="5" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true">
                 <task id="93" name="Testing Hit Detection" color="#8cb6ce" meeting="false" start="2021-03-12" duration="3" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
                 <task id="94" name="Testing Game Executability" color="#8cb6ce" meeting="false" start="2021-03-12" duration="1" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
                 <task id="95" name="Testing Initial Conditions" color="#8cb6ce" meeting="false" start="2021-03-12" duration="2" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
                 <task id="96" name="Testing Block Movement" color="#8cb6ce" meeting="false" start="2021-03-12" duration="3" complete="0" thirdDate="2021-03-12" thirdDate-constraint="0" expand="true"/>
-                <task id="97" name="Testing Score System" meeting="false" start="2021-03-15" duration="1" complete="0" expand="true"/>
-                <task id="98" name="Testing Game Over" meeting="false" start="2021-03-16" duration="1" complete="0" expand="true"/>
+                <task id="97" name="Testing Score System" color="#8cb6ce" meeting="false" start="2021-03-15" duration="1" complete="0" thirdDate="2021-03-15" thirdDate-constraint="0" expand="true"/>
+                <task id="98" name="Testing Game Over" color="#8cb6ce" meeting="false" start="2021-03-16" duration="1" complete="0" thirdDate="2021-03-16" thirdDate-constraint="0" expand="true"/>
             </task>
             <task id="101" name="Testing Nonfunctional Requirements" color="#8cb6ce" meeting="false" start="2021-03-15" duration="2" complete="0" thirdDate="2021-03-15" thirdDate-constraint="0" expand="true"/>
         </task>
@@ -80,9 +80,9 @@
         <task id="29" name="Final Doc Revision 1" color="#8cb6ce" meeting="false" start="2021-03-18" duration="26" complete="0" thirdDate="2021-03-19" thirdDate-constraint="0" expand="true"/>
     </tasks>
     <resources>
-        <resource id="0" name="Abdallah Taha" function="Default:1" contacts="" phone=""/>
-        <resource id="1" name="Ali Tabar" function="Default:0" contacts="" phone=""/>
-        <resource id="2" name="Andrew Carvalino" function="Default:0" contacts="" phone=""/>
+        <resource id="0" name="Abdallah Taha" function="1" contacts="" phone=""/>
+        <resource id="1" name="Ali Tabar" function="1" contacts="" phone=""/>
+        <resource id="2" name="Andrew Carvalino" function="1" contacts="" phone=""/>
     </resources>
     <allocations>
         <allocation task-id="1" resource-id="0" function="Default:1" responsible="false" load="34.0"/>
@@ -92,6 +92,11 @@
         <allocation task-id="17" resource-id="0" function="Default:1" responsible="false" load="33.0"/>
         <allocation task-id="19" resource-id="0" function="Default:1" responsible="false" load="33.0"/>
         <allocation task-id="13" resource-id="0" function="Default:1" responsible="false" load="33.0"/>
+        <allocation task-id="95" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="98" resource-id="0" function="1" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="94" resource-id="0" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="96" resource-id="0" function="1" responsible="false" load="100.0"/>
         <allocation task-id="1" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="9" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="11" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
@@ -99,6 +104,10 @@
         <allocation task-id="15" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="19" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="13" resource-id="1" function="Default:0" responsible="false" load="33.0"/>
+        <allocation task-id="96" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="97" resource-id="1" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="1" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="93" resource-id="1" function="1" responsible="true" load="100.0"/>
         <allocation task-id="1" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="9" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="11" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
@@ -106,8 +115,14 @@
         <allocation task-id="17" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="19" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
         <allocation task-id="13" resource-id="2" function="Default:0" responsible="false" load="33.0"/>
+        <allocation task-id="96" resource-id="2" function="Default:1" responsible="true" load="100.0"/>
+        <allocation task-id="101" resource-id="2" function="Default:1" responsible="false" load="100.0"/>
+        <allocation task-id="93" resource-id="2" function="1" responsible="false" load="100.0"/>
     </allocations>
     <vacations/>
     <previous/>
     <roles roleset-name="Default"/>
+    <roles>
+        <role id="1" name="Developer"/>
+    </roles>
 </project>
