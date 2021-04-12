@@ -168,10 +168,10 @@ This section lists all existing modules and showcases the module design. Modules
 \midrule
 
 \multirow{1}{0.3\textwidth}{Behaviour-Hiding Module} 
-& Game Window\\
+& Game Window\\  & {\textcolor{red}{Grid}}\\
 \midrule
 
-\multirow{8}{0.3\textwidth}{Software Decision Module} & {Grid}\\
+\multirow{8}{0.3\textwidth}{Software Decision Module}
 & Shape\\
 & Start Game\\
 & End Game\\
@@ -295,11 +295,12 @@ requirements, and the other displays the trace between the modules and the antic
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
 FR1 & M1\\
-FR2 & M1\\
-FR3 & M2, M6\\
-FR4 & M2, M5\\
-FR5 & \textcolor{red}{M4, M5, M10}\\
-FR6 & \textcolor{red}{M4, M5}\\
+FR2 & M2, M6\\
+FR3 & M2, M5\\
+FR4 & \textcolor{red}{M4, M5, M10}\\
+FR5 & \textcolor{red}{M4, M5}\\
+\textcolor{red}{FR6} & \textcolor{red}{M5, M6}\\
+\textcolor{red}{FR7} & \textcolor{red}{M9}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
