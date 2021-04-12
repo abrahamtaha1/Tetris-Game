@@ -55,6 +55,7 @@
 \midrule
 March 16 2021 & 1.0 & Added sections 1, 2, 3, 5\\
 March 17 2021 & 1.1 & Added sections 4, 6, 7\\
+\textcolor{red}{April 12 2021} & \textcolor{red}{1.2} & \textcolor{red}{Added Anticipated changes AC5,AC6,AC7 and updated the traceability accordingly. Changed the Grid module to Behaviour-Hiding Module. Changed the secret of the Start Game Module. All changes were done in red.}\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -113,6 +114,14 @@ The size of the browser window the player uses and how the game fits inside it.
 The internal implementation of existing modules.
 \item[\refstepcounter{acnum} \actheacnum \label{acUI}:] 
 The User Interface of the game and how objects are displayed.
+\item[\refstepcounter{acnum} \actheacnum \label{acGF}:] 
+\textcolor{red}{Added different shapes to the game.}
+\item[\refstepcounter{acnum} \actheacnum \label{acModules}:] 
+\textcolor{red}{Some Modules may be combined if found to be more efficient in development.}
+\item[\refstepcounter{acnum} \actheacnum \label{acTesting}:] 
+\textcolor{red}{Testing methods may be changed if new ones are found that are more efficient.}
+
+
 \end{description}
 
 \subsection{Unlikely Changes} \label{SecUchange}
@@ -197,21 +206,22 @@ The purpose of designing the system with modules is that it allows us to decompo
 \end{description}
 
 \subsection{Behaviour-Hiding Module}
+\subsubsection{M1: Game Window}
 \begin{description}
-\item[M1 Game Window]
 \item[Secrets:]The interface of the game that the player sees and interacts with.
 \item[Services:]Displays the game board, score display, and buttons necessary for the player to interact with the game.
 \item[Implemented By:] Tetrileet
 \end{description}
 
-\subsection{Software Decision Module}
-
+\textcolor{red}{
 \subsubsection{M5: Grid}
 \begin{description}
 \item[Secrets:] Algorithm for designing and dealing with Shape movement and placement on the grid.
 \item[Services:] Provides a game board that is associated with programming functionality to shape mechanics within the game.
 \item[Implemented By:] Tetrileet
-\end{description}
+\end{description}}
+
+\subsection{Software Decision Module}
 
 \subsubsection{M7: Shape}
 
@@ -224,7 +234,7 @@ The purpose of designing the system with modules is that it allows us to decompo
 \subsubsection{M2: Start Game}
 
 \begin{description}
-\item[Secrets:] Algorithms that tie a user input to Shape movement, as well as track the score of the current game.
+\item[Secrets:] \textcolor{red}{Algorithm that initializes game conditions.}
 \item[Services:] Resets all game conditions, and then grants the permission for shapes to start falling.
 \item[Implemented By:] Tetrileet
 \end{description}
@@ -288,8 +298,8 @@ FR1 & M1\\
 FR2 & M1\\
 FR3 & M2, M6\\
 FR4 & M2, M5\\
-FR5 & M2, M5, M6, M7, M8, M9, M10\\
-FR6 & M4, M5, M6, M7, M8, M10\\
+FR5 & \textcolor{red}{M4, M5, M10}\\
+FR6 & \textcolor{red}{M4, M5}\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -306,6 +316,9 @@ AC1 & M1\\
 AC2 & M1\\
 AC3 & M2, M3, M4, M5, M6, M7, M8, M9, M10\\
 AC4 & M1, M2, M3, M4, M5, M7\\
+\textcolor{red}{AC5} & \textcolor{red}{M7, M5}\\
+\textcolor{red}{AC6} & \textcolor{red}{M1, M2, M3, M4, M5, M7}\\
+\textcolor{red}{AC7} & \textcolor{red}{M1, M2, M3, M4, M5, M7}\\
 
 \bottomrule
 \end{tabular}

@@ -53,13 +53,14 @@
 
 This document is the Module Interface Specification (MIS) of AAA Solutions's Tetrileet.
 
-\begin{table}[bp]
+\begin{table}[h!]
 \caption{\bf Revision History}
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
 March 17 2021 & 1.0 & Added all modules from Game Controller to End Game \\
 March 18 2021 & 1.1 & Added all modules from BlockFall to Grid\\
+\textcolor{red}{April 12 2021} & \textcolor{red}{1.2} & \textcolor{red}{Explained all of the state variables within the modules as well as explaining the exported types. Also added exceptions to rotate within the Game Controller Module. Furthermore, outputs in the access routines of the Game Controller were also updated. Block and Square were also explained throughout the document. All the changes were done in red to differentiate them.}\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -94,7 +95,7 @@ moveRight & keyInput  &  & Right\_Edge\_Grid \\
 \hline
 moveDown & keyInput &  & Taken\_Grid \\
 \hline
-rotate & keyInput &  & \\
+rotate & keyInput &  &  \textcolor{red}{Right\_Edge\_Grid or Left\_Edge\_Grid or Taken\_Grid} \\
 \hline
 \end{tabular}
 
@@ -124,22 +125,22 @@ None
 \noindent moveRight(key.D):
 \begin{itemize}
 \item transition: $grid.moveRight()$
-\item output: letter
+\item output: \textcolor{red}{None}
 \item exception: Right\_Edge\_Grid
 \end{itemize}
 
 \noindent moveDown(key.S):
 \begin{itemize}
 \item transition: $grid.moveDown()$
-\item output: letter
+\item output: \textcolor{red}{None}
 \item exception: Taken\_Grid
 \end{itemize}
 
 \noindent rotate(key.W):
 \begin{itemize}
 \item transition: $grid.rotate()$
-\item output: letter
-\item exception: None
+\item output: \textcolor{red}{None}
+\item exception: \textcolor{red}{Right\_Edge\_Grid or Left\_Edge\_Grid or Taken\_Grid}
 \end{itemize}
 
 \subsection*{Local Constants}
@@ -160,7 +161,7 @@ None
 \subsubsection* {Exported Constants}
 N/A
 \subsubsection* {Exported Types}
-Block
+Block: \textcolor{red}{Block is a div in a HTML file which has not been tagged as a shape within the game}
 
 \subsubsection* {Exported Access Programs}
 
@@ -178,7 +179,7 @@ eraseBlock & & & \\
 
 \subsubsection* {State Variables}
 
-Square
+Square: \textcolor{red}{Square is a block div in HTML that has been recolored and tagged as a shape within the game}
 
 
 \subsubsection* {Environment Variables}
@@ -228,7 +229,7 @@ BlockFall
 N/A
 \subsubsection* {Exported Types}
 
-$\mathbb{B}$
+$\mathbb{B}$ \textcolor{red}{This module exports a boolean to other modules telling them that the game is in the pause condition} 
 
 \subsubsection* {Exported Access Programs}
 
@@ -243,7 +244,8 @@ Pause & keyInput &  &  \\
 \subsection* {Semantics}
 
 \subsubsection* {State Variables}
-Paused \\
+Paused: \textcolor{red}{Paused is a boolean that is true when the game pause condition is active and false otherwise} 
+
 \subsubsection* {Environment Variables}
 
 keyInput: \{”key.P”\}
@@ -260,7 +262,7 @@ N/A
 
 \noindent Pause(key.P):
 \begin{itemize}
-\item transition: $Paused \equiv True \implies Paused := False \lor Paused \equiv False \implies Paused := True$
+\item transition: $\textcolor{red}{(Paused \equiv True) \implies (Paused := False \lor Paused \equiv False)} \implies Paused := True$
 \item output: None
 \item exception: None
 \end{itemize}
@@ -283,7 +285,8 @@ Game Window, BlockFall
 N/A
 \subsubsection* {Exported Types}
 
-$\mathbb{B}$
+$\mathbb{B}$ \textcolor{red}{This module exports a Boolean that tells the other modules that the game conditions have been reset and game has started}
+
 
 \subsubsection* {Exported Access Programs}
 
@@ -299,7 +302,8 @@ Start & keyInput &  &  \\
 
 \subsubsection* {State Variables}
 
-Started
+Started: \textcolor{red}{Started is a boolean that is true when the game start button has been clicked and False otherwise} 
+
 
 \subsubsection* {Environment Variables}
 keyInput: \{”mouse.leftClick”\}
@@ -316,7 +320,7 @@ N/A
 
 \noindent Start(mouse.leftClick):
 \begin{itemize}
-\item transition: $ Started \equiv False \implies Started := True$
+\item transition: $ \textcolor{red}{(Started \equiv False)} \implies Started := True$
 \item output: None
 \item exception: None
 \end{itemize}
@@ -341,7 +345,8 @@ N/A
 
 \subsubsection* {Exported Types}
 
-$\mathbb{B}$
+$\mathbb{B}$ \textcolor{red}{This module exports a boolean to tell other modules that the game has ended} 
+
 
 \subsubsection* {Exported Access Programs}
 
@@ -356,7 +361,8 @@ gameOver &  &  & \\
 \subsection* {Semantics}
 
 \subsubsection* {State Variables}
-Ended
+Ended: \textcolor{red}{Ended is a boolean state variable within the module that is True when the game blocks haven't overflowed from the grid and False otherwise.} 
+
 \subsubsection* {Environment Variables}
 keyInput: \{”mouse.leftClick”\}
 \subsubsection* {State Invariant}
@@ -368,7 +374,7 @@ Game has started and is in a running state.
 
 \noindent gameOver():
 \begin{itemize}
-\item transition: $Ended \equiv False \rightarrow Ended := True$ 
+\item transition: $ \textcolor{red}{(Ended \equiv False)} \rightarrow Ended := True$ 
 \item output: None
 \item exception: None
 \end{itemize}
@@ -440,7 +446,7 @@ Shape, BlockFall
 \subsection* {Syntax}
 
 \subsubsection* {Exported Constants}
-$\mathbb{B}$
+\textcolor{red}{None}
 \subsubsection* {Exported Types}
 N/A
 \subsubsection* {Exported Access Programs}
@@ -569,7 +575,7 @@ addScore & & $\mathbb{R}$ & \\
 
 \subsubsection*{State Variables}
 
-clear, rowIndex, addToScore
+clear: \textcolor{red}{Clear is a boolean that gets set to True after the blocks in a filled row get cleared and it is false otherwise.}\\ rowIndex: \textcolor{red}{This is a integer that corresponds to which index in the row the block is at.}\\ addToScore:\textcolor{red}{Integer value of 10 that gets added to total score when a clear gets set to True.}
 
 \subsubsection*{Environment Variables}
 
@@ -598,14 +604,14 @@ N/A
 
 \noindent RowClear():
 \begin{itemize}
-\item transition: $ clear := true \implies ~\forall~ rowIndex ~\in~ row ~|~ row[rowIndex].remove('block') ~\land~ \\row[rowIndex].remove('taken')$
+\item transition: $ \textcolor{red}{(clear := true)} \implies ~\forall~ rowIndex ~\in~ row ~|~ row[rowIndex].remove('block') ~\land~ \\row[rowIndex].remove('taken')$
 \item output: None
 \item exception: None
 \end{itemize}
 
 \noindent addScore():
 \begin{itemize}
-\item transition: $ clear == true \implies addToScore += 10$
+\item transition: $ \textcolor{red}{(clear == true)} \implies addToScore += 10$
 \item output: addToScore
 \item exception: None
 \end{itemize}
@@ -653,7 +659,7 @@ rotate() & &  &Right\_Edge\_Grid $\land$ Left\_Edge\_Grid $\land$ Taken\_Grid \\
 
 \subsubsection*{State Variables}
 
-[Square], width, height
+[Square]:\textcolor{red}{This is an array of squares which are div in the HTML file these are what makeup the game grid}\\ width: \textcolor{red}{This is a constant which is the width of the game grid}\\ height: \textcolor{red}{This is a constant which is the height of the game grid}
 
 \subsubsection*{Environment Variables}
 
