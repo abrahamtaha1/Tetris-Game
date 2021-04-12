@@ -5,7 +5,8 @@
 \usepackage{hyperref}
 \usepackage{graphicx}
 \usepackage{float}
-
+\usepackage{ulem}
+\usepackage{xcolor}
 
 
 \hypersetup{
@@ -44,6 +45,7 @@
 Feb 10, 2021 & 1.0 & Sections 2.1, 2.2, 2.3 added\\
 Feb 12, 2021 & 1.1 & Sections 2 and 3 completed\\
 Feb 12, 2021 & 1.2 & Section 1 completed\\
+Apr 11, 2021 & 2.0 & Revised the SRS document per the comments on the 1.2 version\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -123,7 +125,7 @@ HTML &Hypertext Markup Language\\
 \hline
 UI & User Interface\\
 \hline
-GUI & Grahical User Interface\\
+GUI & \sout{Grahical} \textcolor{red}{Graphical} User Interface\\
 \hline
 Ex & Example\\
 \hline
@@ -236,28 +238,28 @@ Event Number & Summary of BUC\\
 \subsection{Functional Requirements}
 \begin{enumerate}
     \item
-    Executable HTML file will launch in a new web browser window.    \subitem
-    Fit Criterion or Test Case: \\
-    Check if a new tab opens within the web browser when aforementioned HTML file is executed.    
+    \sout{Executable HTML file will launch in a new web browser window.}    \subitem
+    \sout{Fit Criterion:} \\
+    \sout{Check if a new tab opens within the web browser when aforementioned HTML file is executed.}
     \item
     The HTML will be executable by any browser with JavaScript compatibility.    \subitem
-    Fit Criterion or Test Case: \\
+    Fit Criterion: \\
     Execute the HTML file with different major browsers and check if it executes properly.    
     \item
     Initial condition of the game will display a start menu and stay in a standby sate until it receives user input.    \subitem
-    Fit Criterion or Test Case: \\
+    Fit Criterion: \\
     Check that the game stays in the start menu when executed until it receives an input.    
     \item
     When the game starts the game state will have zero blocks within the grid and score will be set to zero.    \subitem
-    Fit Criterion or Test Case: \\
+    Fit Criterion: \\
     Check the display of the grid and scoreboard when starting the game to check if the score is at 0 and no blocks are in the grid.    
     \item
-    Blocks will start flowing one by one onto the grid and will rotate based upon user input when the user pushes the play game button.    \subitem
-    Fit Criterion or Test Case: \\
+    The game will begin when the user pushes the play game button.    \subitem
+    Fit Criterion: \\
     Let user press play on the game and check that the blocks begin flowing onto grid one by one and input the WASD keys to check for the 90-degree rotation.    
     \item
     During the game if a block lands outside of the grid of the game then the game will terminate and display final score to the user.    \subitem
-    Fit Criterion or Test Case: \\
+    Fit Criterion: \\
     Check that the game returns the users final score and displays the game over screen.    
 \end{enumerate}
     
@@ -273,12 +275,18 @@ Event Number & Summary of BUC\\
 \item The user interface will include the company logo.
 \item The user interface will have different colors for different shaped blocks
 \item The user interface will have a distinguished game grid section and separate current score section
+\\
+\textcolor{red}{Fit Criterion:} \\
+\textcolor{red}{Check that the user interface appears as the requirements mandate when running the game.}
 \end{itemize}
 \subsubsection{Style Requirements}
 \begin{itemize}
     \item The user interface will have a consistent font throughout
     \item Blocks will generate and fall seamlessly onto the game grid
     \item Buttons should be easily identified and responsive 
+    \\
+    \textcolor{red}{Fit Criterion:} \\
+    \textcolor{red}{Check that the mechanics (buttons) and game state (falling blocks) are consistently communicated by the user interface.}
 \end{itemize}
 
 \subsection{Usability and Humanity Requirements}
@@ -291,20 +299,21 @@ A user shall be able to fully understand the game within five minutes of executi
 \subsubsection{Understandability and Politeness Requirements }
 The system shall use text to indicate that an action can be performed and shall only use icons when the icon is commonly associated with a standard action (i.e trashcan icon for delete).
 \subsubsection{Accessibility Requirements}
-This game will be playable to any user that can operate a mouse and keyboard and has access to a web browser.
+The game will be playable to any user that can operate a mouse and keyboard and has access to a web browser.
 \subsubsection{Convenience Requirements}
-Game will automatically display the play again button for the user when the game ends.
+Game will display the "Play Again" button in the center of the window upon the current game ending.
 
 
 \subsection{Performance Requirements}
 \subsubsection{Speed and Latency Requirements}
-System shall take no longer then 5 seconds to set up the game once the play button has been pressed. System shall also display the game over menu and calculate the final score in under 3 seconds of game ending.
+\sout{System shall take no longer then 5 seconds to set up the game once the play button has been pressed. System shall also display the game over menu and calculate the final score in under 3 seconds of game ending.}
+\textcolor{red}{System shall take no longer then x seconds to set up the game once the play button has been pressed. System shall also display the game over menu and calculate the final score in under y seconds of game ending. The x and y variables are to be as low as possible with respect to the capacity of the web browser.}
 \subsubsection{Safety-Critical Requirements}
 N/A
 \subsubsection{Precision or Accuracy Requirements}
-Score shall have zero decimal points and will always be a whole number. Game block will only rotate by 90 degrees and block shall only move one grid box horizontally upon user input.
+Score shall always be a positive whole number. Game block will only rotate by 90 degrees and block shall only move one grid box horizontally for each user input.
 \subsubsection{Reliability and Availability Requirements}
-System shall go down for no longer then 24 hours every 2 years.
+System shall go down for no longer than \sout{24 hours every 2 years} \textcolor{red}{one consecutive day every x number of years (where x is determined by the team's long term maintenance and update plan)}.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
 N/A
 \subsubsection{Capacity Requirements}
@@ -353,7 +362,7 @@ This product will have zero references pertaining to religions, ethnic groups or
 
 \subsection{Legal Requirements}
 \subsubsection{Legal Compliance Requirements}
-The game will be in complice with all laws and regulations.
+The game will be in \sout{complice} \textcolor{red}{compliance} with all laws and regulations.
 \subsubsection{Standards Compliance Requirements}
 This game shall adhere to the MIT Open Licence.
 
