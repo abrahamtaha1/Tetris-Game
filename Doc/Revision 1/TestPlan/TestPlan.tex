@@ -1,6 +1,7 @@
 \documentclass[12pt, titlepage]{article}
 
 \usepackage{xcolor}
+\usepackage{ulem}
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
@@ -43,7 +44,7 @@ March 4th, 2021 & 1.2 & Added sections 3 and 5\\
 March 4th, 2021 & 1.3 & Added section 6\\
 March 5th, 2021 & 1.4 & Added section 4\\
 March 5th, 2021 & 1.5 & Final edit and review\\
-\textcolor{red}{April 11th, 2021} &\textcolor{red}{2.0} & \textcolor{red}{Edit for revision 1}\\
+\textcolor{red}{April 11th, 2021} &\textcolor{red}{2.0} & \textcolor{red}{Edit for revision 1 - changed any automated tests to manual, addressed TA feedback by talking about stubs and drivers, coverage metrics, types of unit tests (also added to resources chart in gantt chart)}\\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -245,7 +246,7 @@ How test will be performed:  This test will be performed by running the game and
 
 \item{IGC-4\\}
 
-Type: Functional, Dynamic, Automated
+Type: Functional, Dynamic, \sout{Automated} \textcolor{red}{Manual}
 					
 Initial State: Game start menu.
 					
@@ -253,7 +254,7 @@ Input: Clicking on the difficulty adjustment button, setting a difficulty, and t
 					
 Output: Game should change the speed at which blocks fall to the bottom of the screen, depending on which difficulty was selected.
 					
-How test will be performed: Using Jest, the variable that sets the difficulty of the game will be automatically verified.
+How test will be performed: \sout{Using Jest, the variable that sets the difficulty of the game will be automatically verified.} \textcolor{red}{The user will be able to visually check how fast the shapes fall from the top of the grid, and discern between the three speeds. Aditionally, another user can watch how long it takes for the first block to take to fall from the top to the bottom of the grid for each of the three difficulties, and manually time each case to ensure the speeds are different.}
 
 \end{enumerate}
 \subsubsection{Block Movement}
@@ -312,7 +313,7 @@ How test will be performed: The game will be run and the user will press the W k
 
 \item{BM-5\\}
 
-Type: Functional, Dynamic, Automatic
+Type: Functional, Dynamic, \sout{Automatic} \textcolor{red}{Manual}
 					
 Initial State: Blocks have been placed all the way to the second highest row of the grid.
 					
@@ -320,7 +321,7 @@ Input: Placing a block on top of tower so that it falls outside of grid.
 					
 Output: Program shall disable all keyboard input.
 					
-How test will be performed: Jest will check if the boolean variable allowing for keyboard input is disabled, not allowing for the user to move around any tetris blocks on the grid.
+How test will be performed: \sout{Jest will check if the boolean variable allowing for keyboard input is disabled, not allowing for the user to move around any tetris blocks on the grid.} \textcolor{red}{The user will press all keys after the game is over, and visually ensure that no changes are happening in the game.}
 
 \end{enumerate}
 
@@ -427,7 +428,7 @@ How test will be performed: Game will be run and a visual test will be done by t
 
 \item{SR-2\\}
 
-Type: Structural, Dynamic, Automated
+Type: Structural, Dynamic, \sout{Automated} \textcolor{red}{Manual}
 					
 Initial State: Game Menu 
 					
@@ -435,7 +436,8 @@ Input: Clicking start button
 					
 Output: Blocks begin falling
 					
-How test will be performed: Game will be run and Jsdom will be used to ensure that the blocks are falling and that the screen changes the colors within the grid seamlessly. 
+How test will be performed: \sout{Game will be run and Jsdom will be used to ensure that the blocks are falling and that the screen changes the colors within the grid seamlessly.}
+\textcolor{red}{Game will be run and the user can visually ensure that the blocks are falling and that the screen changes the colors within the grid seamlessly.} 
 
 \end{enumerate}
 
@@ -718,13 +720,21 @@ shape just before it touches the bottom of the grid, or land on top of another s
 
 N/A
 
-\subsection{Usability Survey Questions?}
+\subsection{Usability Survey Questions}
 
 \begin{enumerate}
     \item Do you feel like you understand the game completely within five minutes of playing it?
     \item Would you be able to fully play the game knowing only how to use a keyboard and mouse?
-    \item Does the game display a "game over" button once you lose the game?
-    \item With a basic understanding of navigating a web browser, do you feel like you fully understand this game?
+    \item \textcolor{red}{Were the different types of Tetris blocks easily distinguishable?}
+    \item \textcolor{red}{How smoothly did the blocks fall onto the game grid?}
+    \item \textcolor{red}{Did picking the different difficulties at the start of a game make a dramatic enough difference in gameplay?}
+    \item \textcolor{red}{Were the game controls responsive and easily usable?}
+    \item \textcolor{red}{Which Tetris game looks more visually appealing? (Display a screenshot of the original implementation and of Tetrileet)}
+    \item \textcolor{red}{In your opinion, did this application / game contain any references pertaining to religions, ethnic groups or any cultures, and / or have the potential to cause offence to any religions, ethnic groups, or cultures?}
+    \item \textcolor{red}{Was the game well formatted and easily viewable?}
+    \item \sout{Does the game display a "game over" button once you lose the game?}
+    \item \sout{With a basic understanding of navigating a web browser, do you feel like you fully understand this game?}
+    \item \textcolor{red}{}
 \end{enumerate}
 
 \end{document}
