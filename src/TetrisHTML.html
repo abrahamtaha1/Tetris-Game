@@ -3,6 +3,7 @@
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////-->
 <!DOCTYPE html>
 <html lang="en" dir ="ltr">
+    <!-- Creating the title for the HTML and importing the style sheet and javascript files -->
 	<head>
 		<meta charset="utf-8">
         <script src="TetrisGame.js" charset="utf-8"></script>
@@ -10,6 +11,7 @@
         <title>Tetrileet</title>
     </head>
 
+    <!-- "Upcoming Block" div element with inline styling. Displays the next block the user will have to place into the grid. -->
     <div style = "position: absolute;
     color: rgb(0, 255, 0); 
     font-family: Lucida, monospace;
@@ -19,24 +21,30 @@
     bottom: 82%;
     ">
        Upcoming Block
-     </div> 
+    </div> 
 
+    <!-- Main body of the game window, with the background color set to black -->
     <body style="background-color: rgb(20, 20, 20);">
 
+        <!-- Displays the player's current score -->
         <h3 style = "color: rgb(0, 255, 0); 
         text-align: center;
         user-select: none;
         font-family: Lucida, monospace;
         ">Score: <span id ="score" style="color: rgb(0, 255, 0);">0</span></h3>
 
+        <!-- Button that controls Pausing and Starting the game (not available until the game has started, and not available after the game ends) -->
         <button id = "start-Game" button accesskey="p" style = visibility:hidden;
         >Start Game/ Pause Game</button>
 
+        <!-- Separation/filler div -->
         <div> </div>
 
-        
+        <!-- Contains all the main features in the Game Window -->
         <div class="container">
 
+            <!-- Displays the start and difficulty screens to the user along with their corresponding functionalities (initially visible) -->
+            <!-- Each feature also contains its corresponding inline styling -->
             <div id="startScreen" style="width:300px;
             display: flex;
             height:600px;
@@ -47,7 +55,7 @@
             justify-content: center;
             top: 85px;"
             >
-        
+                <!-- Displays the game title upon startup (initially visible) -->
                 <div style = "
                 position: absolute;
     		    display: block;
@@ -64,6 +72,7 @@
                 "
                 >Tetrileet</div>
 
+                <!-- Displays the controls of the game (visible after clicking the "Start Game" button)-->
                 <div id = "controls" style = "
                 position: absolute;
     		    display: block;
@@ -81,7 +90,7 @@
                 >W:Rotate A:Left S:Down D:Right</div>
 
 
-
+                <!-- Displays the "Start Game" button (initially visible) -->
                 <button type="button", id = "startGame" style = "
                 position: absolute;
     		    display: block;
@@ -97,21 +106,24 @@
 			    font-size: 20px;"
                 >Start Game</button>
 
-                
+                <!-- Displays difficulty meter (visible after clicking "Start Game") -->
                 <img src="diffmeter.png" id = "diffmeter" style="
                 position:absolute;
                 width: 250px;
                 top: 30%;"
                 >
 
+                <!-- Displays company logo (initially visible) -->
                 <img src="AAASolutions1.png" id = "logo" style="
                 position:absolute;
                 width: 250px;
                 top: 48%;"
                 >
 
+                <!-- Contains the buttons for setting the difficulty (initially invisible until the "Start Game" button is clicked) -->
                 <div id="difficulties">
 
+                <!-- Sets the difficulty to "Medium" -->
                 <button id="med" style = "
                 position: absolute;
     		    display: block;
@@ -128,6 +140,7 @@
                 "
                 >Medium</button>
 
+                <!-- Sets the difficulty to "Easy" -->
                 <button id="easy" style = "
                 position: absolute;
     		    display: block;
@@ -144,6 +157,7 @@
                 "
                 >Easy</button>
 
+                <!-- Sets the difficulty to "Hard" -->
                 <button id="hard" style = "
                 position: absolute;
     		    display: block;
@@ -164,6 +178,7 @@
 
             </div>
 
+            <!-- Displays the restart screen at the end of the game for the user (not visible until the game ends) -->
             <div id="restartScreen" style="width:300px;
             visibility: hidden;
             border: thick solid rgb(8, 231, 57);
@@ -177,6 +192,7 @@
             top: 25%;"
             >
         
+            <!-- Displays the player's final score (initially set to 0) -->
                 <div id= "finalScore" style = "
                 visibility: hidden;
                 position: absolute;
@@ -195,6 +211,7 @@
                 >Score 0</div>
 
 
+                <!-- Button that reloads the game upon clicking it -->
                 <button type="button", id = "restartGame" style = "
                 visibility: hidden;
                 position: absolute;
@@ -214,7 +231,9 @@
             </div>
 
 
+            <!-- Container for the Grid and each individual grid box -->
             <div class= "grid" style="border: thick solid rgb(8, 231, 57);">
+                <!-- Individual grid boxes meant for storing falling and placed blocks (initially all empty) -->
                 <div></div>
                 <div></div>
                 <div></div>
@@ -415,6 +434,7 @@
                 <div></div>
                 <div></div>
                 <div></div> 
+                <!-- Extra row of grid boxes beneath the bottom row so the falling block doesn't fall out of bounds -->
                 <div class="taken"></div>
                 <div class="taken"></div>
                 <div class="taken"></div>
@@ -429,6 +449,7 @@
 
         </div>
         
+        <!-- Contains the grid for displaying the "Upcoming Block" (initially empty) -->
         <div class='upcoming-grid' style="border: thick solid rgb(8, 231, 57);">
             <div></div>
             <div></div>

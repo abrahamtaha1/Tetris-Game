@@ -1,3 +1,4 @@
+/* Determines the background color and design of the Game Window */
 .container {
     display: flex;
     background-image: url("https://assets.codepen.io/2610/internal/screenshots/pens/hGJBg.default.png?fit=cover&format=auto&ha=true&height=540&quality=75&v=2&version=1411352597&width=960");
@@ -5,6 +6,7 @@
     background-color: rgb(20, 20, 20);
 }
 
+/* Determines the size, shape, location, and color of the Grid */
 .grid {
     width: 300px;
     height: 600px;
@@ -13,16 +15,18 @@
     background-color: rgb(255, 255, 255);
 }
 
+/* Represents a grid box that may contain part of a block */
 .grid div {
     height: 30px;
     width: 30px;
 } 
 
-
+/* Indicates that a grid box contains part of a block */
 .blocks {
     background-color: blueviolet;
 }
 
+/* Determines the size, shape, location, and color of the Grid for the "Upcoming Block" element */
 .upcoming-grid {
     margin-left: 1200px;
     margin-top: -500px;
@@ -33,6 +37,7 @@
     background-color: rgb(255, 255, 255);
 }
 
+/* Represents a grid box (from the "Upcoming Block" grid) that may contain part of a block */
 .upcoming-grid div{
     height: 20px;
     width: 20px;
